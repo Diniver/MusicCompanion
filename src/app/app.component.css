@@ -1,0 +1,51 @@
+.button {
+    background-color: #D5E8D4; /* Green */
+    border-width: 0.2rem;
+    border-radius: 0.5rem;
+    border-color: #82B366;
+    color: black;
+    padding: 1rem 1.8rem;
+    margin: 0.1rem 0.2rem;
+    height: 5rem;
+    width: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+    .buttonAdd{
+    opacity: 0.7;
+    background-image: url(../assets/img/ico/add_FILL0_wght400_GRAD0_opsz48.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .buttonActive{
+    background-color: #60A917;
+    border-color: #2D7600;
+  }
+  .buttonYellow{
+    background-color: #FFF2CC;
+    border-color: #D6B656;
+  }
+  .buttonYellowActive{
+    background-color: #E3C800;
+    border-color: #b09500;
+  }
+  
+  .buttonOrange{
+    background-color: #F8CECC;
+    border-color: #B85450;
+  }
+  .buttonOrangeActive{
+    background-color: #FA6800;
+    border-color: #c73500;
+  }
+  .buttonPurple{
+    background-color: #E1D5E7;
+    border-color: #9673A6;
+  }
+  .buttonPurpleActive{
+    background-color: #76608A;
+    border-color: #432D57;
+    color: whitesmoke
+  }
+  
