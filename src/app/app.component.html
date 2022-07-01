@@ -1,19 +1,46 @@
 <!--ng serve --host 192.168.0.10" REMOVE BEFORE DEPLOY, -->
 
-<div id="left-menu"> 
-  <button id="btn-menu"></button>
-  <button id="btn-stop-all" style="margin-top:2rem ;"></button>
-</div>
+<mat-toolbar>{{title}}
+  <div>
+    <button mat-icon-button>
+      <mat-icon class="menubtn">menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
 
-<h1>{{title}}</h1>
+<div class="sidepanel">
+  <button mat-icon-button>
+    <mat-icon>stop</mat-icon>
+  </button>
+  
+  <div class="sidepanel-volume">
+    <button mat-icon-button>
+      <mat-icon>volume_up</mat-icon>
+    </button>
+    <mat-slider vertical></mat-slider>
+    <button mat-icon-button>
+      <mat-icon>volume_down</mat-icon>
+    </button>
+  </div>
+</div>
 
 <div id="grid-main">
   <button class="play purple-active">123123 text</button>
   <button class="play orange">more text</button>
+  <button class="play orange">more text</button>
   <button class="add play" (click)="openDialog()"></button>
 
-
 </div>
+
+
+
+<!-- <div id="left-menu"> 
+  <button id="btn-menu"></button>
+  <button id="btn-stop-all" style="margin-top:2rem ;"></button>
+</div> -->
+
+
+
 
 <div id="page-menu">
   <div id="page">
