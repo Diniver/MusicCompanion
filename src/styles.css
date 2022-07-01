@@ -1,3 +1,9 @@
+@font-face {
+    font-family: Orbitron;
+    src: url(assets/font/Orbitron-VariableFont_wght.ttf);
+    font-weight: bold;
+  }
+
 body{
     background-color: #AAA;
 }
@@ -8,3 +14,6 @@ button{
 button:hover{
     box-shadow: 0 0.3rem 0.5rem 0.01rem rgba(0, 0, 0, 0.24);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
