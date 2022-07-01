@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import { BtnSettingsComponent } from './btn-settings/btn-settings.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'DMMC';
+constructor(private matDialog: MatDialog){}
+
+openDialog(){
+  this.matDialog.open(BtnSettingsComponent);
+}
 }

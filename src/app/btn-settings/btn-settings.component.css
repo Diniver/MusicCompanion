@@ -1,0 +1,12 @@
+h3 {
+    text-align: left;
+}
+
+#confirm-menu {
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    border-radius: 0.3rem;
+    font-size: large;
+}
