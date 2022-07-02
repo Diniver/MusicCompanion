@@ -6,6 +6,40 @@ h3 {
     display: flex;
     justify-content: space-between;
 }
+
 button {
     font-size: 1.3rem;
+}
+
+.option-style {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start !important; 
+}
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.play {
+    border-width: 0.15rem !important;
+    border-style: solid;
+    margin: 0.5em;
+    transition-duration: 300ms;
+    border-radius: 0.4em;
+    width: 40px;
+    height: 40px;  
+}
+
+.coloroptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.toggle-margin{
+    margin-top: 13px;
+    margin-bottom: 13px;
 }

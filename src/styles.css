@@ -52,3 +52,91 @@ button:hover {
 .mat-raised-button.mat-primary {
     background-color: #454872;
 }
+
+.mat-slider-thumb {
+    background-color: rgb(117, 146, 123) !important;
+    border-color: rgb(107, 107, 107) !important;
+
+}
+
+.mat-slider-thumb-label {
+    background-color: #0a691a !important;
+}
+
+.mat-slider-track-fill {
+    background-color: #0a691a !important;
+}
+
+.green {
+    background-color: #D5E8D4 !important; 
+    border-color: #82B366 !important;
+}
+
+.green-active {
+    background-color: #60a917 !important;
+    border-color: #2d7600 !important;
+}
+
+.yellow {
+    background-color: #fff2cc !important;
+    border-color: #d6b656 !important;
+}
+
+.yellow-active {
+    background-color: #e3c800 !important;
+    border-color: #b09500 !important;
+}
+
+.orange {
+    background-color: #f8cecc !important;
+    border-color: #b85450 !important;
+}
+
+.orange-active {
+    background-color: #fa6800 !important;
+    border-color: #c73500 !important;
+}
+
+.purple {
+    background-color: #e1d5e7 !important;
+    border-color: #9673a6 !important;
+}
+
+.purple {
+    background-color: #76608a !important;
+    border-color: #432d57 !important;
+    color: whitesmoke
+}
+
+.teal {
+    background-color: #B0E3E6 !important;
+    border-color: #0E8088 !important;
+}
+
+.teal-active {
+    background-color: #1BA1E2 !important;
+    border-color: #006EAF !important;
+    color: whitesmoke
+}
+
+.blue {
+    background-color: #DAE8FC !important;
+    border-color: #6C8EBF !important;
+}
+
+.blue-active {
+    background-color: #0050EF !important;
+    border-color: #001DBC !important;
+    color: whitesmoke
+}
+
+.poo {
+    background-color: #FFE6CC !important;
+    border-color: #D79B00 !important;
+}
+
+.poo-active {
+    background-color: #F0A30A !important;
+    border-color: #BD7000 !important;
+    color: whitesmoke
+}

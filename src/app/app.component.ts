@@ -10,8 +10,14 @@ import { BtnSettingsComponent } from './btn-settings/btn-settings.component';
 export class AppComponent {
   title = 'DMMC';
 constructor(private matDialog: MatDialog){}
-
-openDialog(){
+openBtnSettings(){
   this.matDialog.open(BtnSettingsComponent);
+}
+// Logic for music button
+isActive: boolean = false;
+
+toggleBtn(): void {
+  this.isActive = !this.isActive
+  
 }
 }

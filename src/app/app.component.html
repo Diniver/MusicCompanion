@@ -1,4 +1,6 @@
-<!--ng serve --host 192.168.0.10" REMOVE BEFORE DEPLOY, -->
+<!--
+  ng serve --host 192.168.0.10
+  " REMOVE BEFORE DEPLOY, -->
 
 <mat-toolbar>{{title}}
   <div>
@@ -10,12 +12,15 @@
 
 <div class="sidepanel">
   <button mat-icon-button>
-    <mat-icon>stop</mat-icon>
+    
+    <mat-icon >stop</mat-icon>
   </button>
-  
+
   <div class="sidepanel-volume">
     <button mat-icon-button>
+
       <mat-icon>volume_up</mat-icon>
+
     </button>
     <mat-slider vertical></mat-slider>
     <button mat-icon-button>
@@ -24,28 +29,20 @@
   </div>
 </div>
 
-<div id="grid-main">
-  <button class="play purple-active">123123 text</button>
+<div class="grid-main">
+  <button class="play purple"> text</button>
+  <button class="play poo" (click)="toggleBtn()">more text</button>
+  <input type="button" class="play green" (click)="toggleBtn()">
   <button class="play orange">more text</button>
-  <button class="play orange">more text</button>
-  <button class="add play" (click)="openDialog()"></button>
+  <button class="add play" (click)="openBtnSettings()"></button>
 
 </div>
 
 
-
-<!-- <div id="left-menu"> 
-  <button id="btn-menu"></button>
-  <button id="btn-stop-all" style="margin-top:2rem ;"></button>
-</div> -->
-
-
-
-
 <div id="page-menu">
   <div id="page">
-    <button class="btn-page-active btn-page">more text</button>
-    <button class="btn-page">more text</button>
+    <button class="btn-page-active btn-page"> text</button>
+    <button class="btn-page blue">cave</button>
     <button class="btn-page">more text</button>
     <button class="btn-page">more text</button>
   </div>
