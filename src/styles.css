@@ -29,17 +29,19 @@ button:hover {
 }
 
 .mat-typography h1 {
-    text-align: center;
     font-family: Orbitron;
     letter-spacing: 0.1em;
     font-size: 3rem;
 }
 
-.mat-typography h3 {
+.mat-typography h2 {
     font-family: Orbitron;
     letter-spacing: 0.2rem;
-    font-size: 1.3em;
+    font-size: 1.6em;
 
+}
+.mat-typography h3 {
+    font-family: Orbitron;
 }
 
 .mat-toolbar-single-row {
@@ -102,7 +104,7 @@ button:hover {
     border-color: #9673a6 !important;
 }
 
-.purple {
+.purple-active{
     background-color: #76608a !important;
     border-color: #432d57 !important;
     color: whitesmoke

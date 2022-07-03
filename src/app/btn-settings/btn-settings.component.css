@@ -13,8 +13,9 @@ button {
 
 .option-style {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: flex-start !important; 
+    flex-wrap: wrap;
 }
 
 .options{
@@ -36,10 +37,15 @@ button {
 .coloroptions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    border: none;
 }
 
 .toggle-margin{
     margin-top: 13px;
     margin-bottom: 13px;
+}
+h3 {
+    letter-spacing: 0.2rem;
+    font-size: 1.3em;
 }

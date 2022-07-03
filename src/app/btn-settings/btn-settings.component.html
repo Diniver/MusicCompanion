@@ -1,11 +1,14 @@
 <h3>{{title}}</h3>
 <div class="options">
+    <div><p>File name.mp3</p></div>
+
 <div class="option-style">
+    
     <div>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="standard">
             <mat-label class="labelsize">Label</mat-label>
             <!-- disabled if track title option is true -->
-            <input matInput>
+            <input matInput disabled value="is disabled">
           </mat-form-field>
     </div>
     <div>
@@ -17,10 +20,6 @@
     </div>
 
 </div>
-
-<div>
-</div>
-
 <div class="toggle-margin">
 
     <mat-slide-toggle color="primary" checked="true">Use track title</mat-slide-toggle>

@@ -16,6 +16,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
+
 
 
 
@@ -47,7 +51,9 @@ import { BtnSettingsComponent, } from './btn-settings/btn-settings.component';
     FormsModule,
     MatInputModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatListModule
 
   ],
   providers: [],
