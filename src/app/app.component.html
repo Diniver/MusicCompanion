@@ -2,70 +2,18 @@
   ng serve --host 192.168.0.10
   " REMOVE BEFORE DEPLOY, -->
 
-  <!-- Main toolbar/Header -->
-<mat-toolbar>
-  {{title}}
+<app-header></app-header>
+<app-sidepanel></app-sidepanel>
 
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav-content class="sidenav-content">
-      <button mat-icon-button (click)="opened=!opened">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-sidenav-content>
-    <mat-sidenav #sidenav class="sidenav" [(opened)]=opened mode="over" position="end" role="navigation">
-      <div class="sidenav-menu">
-        <h3>Menu</h3>
-      </div>
-      <div class="sidenav-menu-options">
-        <button mat-menu-item>Tutorial</button>
-        <button mat-menu-item>Presets</button>
-        <button mat-menu-item>Manage Buttons</button>
-        <button mat-menu-item>Backup and Restore</button>
-        <button mat-menu-item>Support us</button>
-        <button mat-menu-item>About</button>
-      </div>
-    </mat-sidenav>
-  </mat-sidenav-container>
-
-</mat-toolbar>
-
-
-
-
-<!-- Side panel - volume control -->
-<div class="sidepanel">
- 
-  <button mat-icon-button>
-    <mat-icon>stop</mat-icon>
-  </button>
-  <div class="sidepanel-volume">
-    <button mat-icon-button>
-      <mat-icon>volume_up</mat-icon>
-    </button>
-    <mat-slider vertical></mat-slider>
-    <button mat-icon-button>
-      <mat-icon>volume_down</mat-icon>
-    </button>
-  </div>
-</div>
 <!-- Main button array -->
 <div class="grid-main">
   <button class="play purple"> text</button>
-  <button class="play poo" (click)="toggleBtn()">more text</button>
-  <input type="button" class="play green" (click)="toggleBtn()">
+  <button class="play poo">more text</button>
+  <input type="button" class="play green">
   <button class="play orange">more text</button>
   <button class="add play" (click)="openBtnSettings()"></button>
 
 </div>
 
-<!-- Pages array -->
-<div id="page-menu">
-    <div id="page">
-      <div id="page-a">
-    <button class="btn-page-active btn-page">text</button>
-    <button class="btn-page green">33333333333333 333333333</button>
-    <!-- <button class="btn-page">blablabl</button> -->
-    <button class="btn-page">more text</button>
-  </div>
-  </div>
-</div>
+<!-- Pages Placeholder -->
+<app-pages></app-pages>

@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BtnSettingsComponent } from './btn-settings/btn-settings.component';
+import { BtnSettingsComponent } from './components/buttons/btn-settings/btn-settings.component';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +9,11 @@ import { BtnSettingsComponent } from './btn-settings/btn-settings.component';
 })
 
 export class AppComponent {
-  title = 'DMMC';
+
 
   constructor(private matDialog: MatDialog) { }
 
   openBtnSettings() {
     this.matDialog.open(BtnSettingsComponent);
   }
-  // Logic for music button
-  isActive: boolean = false;
-
-  toggleBtn(): void {
-    this.isActive = !this.isActive
-  }
-
-  opened = false;
-
 }

@@ -1,0 +1,36 @@
+#page-menu {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+#page {
+
+ position: fixed;
+ bottom: 0;
+}
+
+#page-a {
+    position: relative;
+    right: -31px;
+}
+.btn-page {
+    
+    display: inline-flex;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    height: 3.5em;
+    width: 5em;
+    overflow: hidden;
+    opacity: 0.6;
+    justify-content: center; 
+   
+}
+
+.btn-page-active {
+    opacity: 1;
+}
+

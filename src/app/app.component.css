@@ -45,43 +45,6 @@ h1 {
 
 }
 
-#page-menu {
-    display: flex;
-    justify-content: center;
-
-}
-
-
-#page {
-
- position: fixed;
- bottom: 0;
-}
-
-#page-a {
-    position: relative;
-    right: -31px;
-}
-
-.btn-page {
-    
-    display: inline-flex;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
-    height: 3.5em;
-    width: 5em;
-    overflow: hidden;
-    opacity: 0.6;
-    justify-content: center; 
-   
-}
-
-.btn-page-active {
-    opacity: 1;
-}
-
 .add {
     opacity: 0.4;
     background-color: #EEE;
@@ -93,75 +56,4 @@ h1 {
 
 .add:hover {
     opacity: 1;
-}
-
-.mat-toolbar-single-row {
-    justify-content: space-between;
-}
-
-.sidepanel {
-    /* background-color: #0050EF; */
-    height: auto;
-    margin-right: 7px;
-    margin-top: 18px;
-    width: 4em;
-    float: right;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.sidepanel-volume {
-    margin-top: 6em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mat-slider {
-    height: 250px;
-}
-
-
-.mat-slider-thumb {
-    background-color: #001DBC;
-}
-
-.sidenav-container {
-    position: initial;
-    z-index: auto;
-}
-
-.sidenav {
-    width: 150px;
-    background-color: #aaa;
-
-}
-
-.sidenav-content {
-    background: #8D988C;
-
-}
-
-.sidenav-menu {
-    display: flex;
-    justify-content: center;
-    margin-top: 6px;
-    margin-bottom: 6px;
-}
-
-.sidenav-menu-options {
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-}
-
-.mat-menu-item{
-    width: 100%;
-    text-align: start;
-    height: 3em;
-
 }
