@@ -1,0 +1,25 @@
+.sidepanel {
+    /* background-color: #0050EF; */
+    height: auto;
+    margin-right: 7px;
+    margin-top: 18px;
+    width: 4em;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sidepanel-volume {
+    margin-top: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-slider {
+    height: 250px;
+}
+
+
