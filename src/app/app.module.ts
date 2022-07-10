@@ -27,6 +27,7 @@ import { BtnSettingsComponent, } from './components/buttons/btn-settings/btn-set
 import { BtnGridComponent } from './components/buttons/btn-grid/btn-grid.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
+import { BtnComponent } from './components/buttons/btn/btn.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
     BtnSettingsComponent,
     BtnGridComponent,
     PagesComponent,
-    SidepanelComponent
-
+    SidepanelComponent,
+    BtnComponent
+    
   ],
   imports: [
     BrowserModule,

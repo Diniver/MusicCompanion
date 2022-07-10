@@ -1,60 +1,64 @@
 <h3>{{title}}</h3>
 <div class="options">
-    <div><p>File name.mp3</p></div>
-
-<div class="option-style">
-    
     <div>
-        <mat-form-field appearance="standard">
-            <mat-label class="labelsize">Label</mat-label>
-            <!-- disabled if track title option is true -->
-            <input matInput disabled value="is disabled">
-          </mat-form-field>
-    </div>
-    <div>
-        <button style="transform:scale(0.75);" type="button" mat-raised-button (click)="fileInput.click()"
-            color="primary">
-            <mat-icon>folder_open</mat-icon>
-        </button>
-        <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+        <p>{{fileName}}</p>
     </div>
 
-</div>
-<div class="toggle-margin">
+    <div class="option-style">
 
-    <mat-slide-toggle color="primary" checked="true">Use track title</mat-slide-toggle>
+        <div>
+            <mat-form-field appearance="standard">
+                <mat-label class="labelsize">Label</mat-label>
+                <!-- disabled if track title option is true -->
+                <input matInput disabled value="is disabled">
+            </mat-form-field>
+        </div>
+        <!-- Button For set File -->
+        <div>
+            <button style="transform:scale(0.75);" type="file" mat-raised-button color="primary"
+                (click)="fileInput.click()">
+                <mat-icon>folder_open</mat-icon>
+                <input #fileInput type="file" class="hidden" (change)="onFileInput($event)">
+            </button>
+        </div>
+    </div>
+    <div class="toggle-margin">
 
-</div>
+        <mat-slide-toggle color="primary" checked="true">Use track title</mat-slide-toggle>
+
+    </div>
+    <div><audio controls [src]="cleanAudio"></audio></div>
+    <div style="margin-top: 10px;">
+        <p>Volume slider</p>
+    </div>
+
+
+    <div>
+        <mat-button-toggle-group class="coloroptions" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle class="play green" (click)="setColor('green')">1</mat-button-toggle>
+            <mat-button-toggle class="play yellow" (click)="setColor('yellow')">2</mat-button-toggle>
+            <mat-button-toggle class="play poo" (click)="setColor('poo')">3</mat-button-toggle>
+            <mat-button-toggle class="play orange" (click)="setColor('orange')">4</mat-button-toggle>
+            <mat-button-toggle class="play teal" (click)="setColor('teal')">5</mat-button-toggle>
+            <mat-button-toggle class="play blue" (click)="setColor('blue')">6</mat-button-toggle>
+            <mat-button-toggle class="play purple" (click)="setColor('purple')">7</mat-button-toggle>
+        </mat-button-toggle-group>
+
+    </div>
 
 
 
+    <div class="toggle-margin">
+        <mat-slide-toggle color="primary" (toggleChange)="inGroup=!inGroup">Color Group</mat-slide-toggle>
+    </div>
+    <div>
+        <p>Group function explanantion</p>
+    </div>
+    <div class="toggle-margin">
+        <mat-slide-toggle color="primary" (toggleChange)="loop=!loop">Loop</mat-slide-toggle>
+    </div>
 
-<div >
-    <mat-button-toggle-group class="coloroptions" name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle class="play green">1</mat-button-toggle>
-    <mat-button-toggle class="play yellow">2</mat-button-toggle>
-    <mat-button-toggle class="play poo">3</mat-button-toggle>
-    <mat-button-toggle class="play orange">4</mat-button-toggle>
-    <mat-button-toggle class="play teal">5</mat-button-toggle>
-    <mat-button-toggle class="play blue">6</mat-button-toggle>
-    <mat-button-toggle class="play purple">7</mat-button-toggle>
-</mat-button-toggle-group>
-
-</div>
-
-
-
-<div class="toggle-margin">
-    <mat-slide-toggle color="primary">Color Group</mat-slide-toggle>
-</div>
-<div>
-    <p>Group function explanantion</p>
-</div>
-<div class="toggle-margin">
-    <mat-slide-toggle color="primary">Loop</mat-slide-toggle>
-</div>
-
-<div id="confirm-menu">
-    <button mat-raised-button color="primary">Remove</button>
-    <button mat-raised-button color="primary">Save</button>
-</div>
+    <div id="confirm-menu">
+        <button mat-raised-button color="primary">Remove</button>
+        <button mat-raised-button color="primary">Save</button>
+    </div>

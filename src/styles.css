@@ -142,3 +142,7 @@ button:hover {
     border-color: #BD7000 !important;
     color: whitesmoke
 }
+
+.hidden {
+display: none;  
+}
