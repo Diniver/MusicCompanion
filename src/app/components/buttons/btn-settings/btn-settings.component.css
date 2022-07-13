@@ -84,3 +84,13 @@ mat-slider {
   margin-left: 10px;
   margin-right: 10px;
 }
+@media only screen and (max-width: 300px) {
+  mat-slider {
+    width: 50px;
+  }
+  .mat-raised-button {
+    min-width: 38px;
+    line-height: 26px;
+    font-size: 14px;
+  }
+}
