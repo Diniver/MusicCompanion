@@ -1,13 +1,12 @@
 export interface iButton {
-    buttonID: number;
-    fileLocation: string;
-    fileTitle: string;
-    label: string;
-    useFileTitle: boolean;
-    volume: number;
-    color: string;
-    isActive: boolean;
-    loop: boolean;
-    trimStart: number;
-    trimEnd:number;
+  id?: number;
+  btnTitle: string;
+  audioData: any;
+  volume: number;
+  color: string;
+  inGroup: boolean;
+  loop: boolean;
+  trimStart: number;
+  trimEnd: number;
+  isActive: boolean;
 }
