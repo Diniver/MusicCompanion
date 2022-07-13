@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { iButton } from '../iButton';
+
 @Component({
   selector: 'app-btn-settings',
   templateUrl: './btn-settings.component.html',
@@ -19,6 +21,7 @@ export class BtnSettingsComponent implements OnInit {
   inGroup: boolean = false;
   trimStart: number = 0;
   trimEnd: number = 0;
+  isActive: boolean = false;
 
   constructor(private domSanitizer: DomSanitizer) {}
 
@@ -74,6 +77,7 @@ export class BtnSettingsComponent implements OnInit {
     console.log('trimEnd: ' + this.trimEnd);
     console.log('inGroup: ' + this.inGroup);
     console.log('loop: ' + this.loop);
+    // console.log('data: ' + this.audioData);
   }
 
   ngOnInit(): void {}

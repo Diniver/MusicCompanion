@@ -1,1 +1,8 @@
-<button class="play purple"> text</button>
+<button
+  class="play purple"
+  *ngFor="let button of buttons"
+  (click)="playStop()"
+  (dblclick)="openSettings()"
+>
+  {{ button.btnTitle }}
+</button>
