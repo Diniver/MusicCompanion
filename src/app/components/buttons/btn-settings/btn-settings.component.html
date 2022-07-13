@@ -1,8 +1,9 @@
 <h3>{{ title }}</h3>
+<p>{{ btnTitle }}</p>
 <div class="options">
   <div class="option-style">
     <div>
-      <!-- Custo Labe for button -->
+      <!-- Custom Label for button -->
       <mat-form-field appearance="standard">
         <mat-label class="labelsize">Button name</mat-label>
         <input
@@ -44,9 +45,38 @@
       >Use track title</mat-slide-toggle
     >
   </div>
-
-  <div style="margin-top: 10px">
-    <p>Volume slider</p>
+  <!-- Volume -->
+  <div>
+    <mat-slider
+      min="0"
+      max="100"
+      thumbLabel
+      aria-label="units"
+      [value]="volume"
+      [(ngModel)]="volume"
+    ></mat-slider>
+  </div>
+  <!-- trimming -->
+  <div>
+    <div class="trim-head">
+      Trimming
+      <mat-icon
+        style="margin-left: 4px; color: #454872"
+        matTooltip="Trim the song from the start/end in seconds"
+        matTooltipPosition="above"
+        >info</mat-icon
+      >
+    </div>
+    <div>
+      <mat-form-field class="trim-label" appearance="standard">
+        <mat-label class="labelsize">Start</mat-label>
+        <input matInput [(ngModel)]="trimStart" />
+      </mat-form-field>
+      <mat-form-field class="trim-label" appearance="standard">
+        <mat-label class="labelsize">End</mat-label>
+        <input matInput [(ngModel)]="trimEnd" />
+      </mat-form-field>
+    </div>
   </div>
 
   <div>
@@ -78,14 +108,17 @@
       >
     </mat-button-toggle-group>
   </div>
-
+  <!-- In Groups -->
   <div class="toggle-margin">
     <mat-slide-toggle color="primary" (toggleChange)="inGroup = !inGroup"
       >Color Group</mat-slide-toggle
     >
-  </div>
-  <div>
-    <p>Group function explanantion</p>
+    <mat-icon
+      style="margin-left: 4px; color: #454872"
+      matTooltip="If enabled, only one button from selected color can be active"
+      matTooltipPosition="above"
+      >info</mat-icon
+    >
   </div>
   <div class="toggle-margin">
     <mat-slide-toggle color="primary" (toggleChange)="loop = !loop"

@@ -18,12 +18,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BtnSettingsComponent, } from './components/buttons/btn-settings/btn-settings.component';
+import { BtnSettingsComponent } from './components/buttons/btn-settings/btn-settings.component';
 import { BtnGridComponent } from './components/buttons/btn-grid/btn-grid.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
@@ -37,8 +37,7 @@ import { BtnComponent } from './components/buttons/btn/btn.component';
     BtnGridComponent,
     PagesComponent,
     SidepanelComponent,
-    BtnComponent
-    
+    BtnComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,10 +58,10 @@ import { BtnComponent } from './components/buttons/btn/btn.component';
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
-    MatListModule
-
+    MatListModule,
+    MatTooltipModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

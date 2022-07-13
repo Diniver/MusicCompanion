@@ -7,9 +7,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class BtnSettingsComponent implements OnInit {
   title = 'Button Settings';
+  btnId: number = 0;
+  btnTitle: string = '';
   audioData: any = '';
   fileName: string = '';
-  btnTitle: string = '';
+  useTrackTitle: boolean = true;
+  customName: string = '';
+  btnColor: string = '';
+  volume: number = 100;
   loop: boolean = false;
   inGroup: boolean = false;
   trimStart: number = 0;
@@ -50,9 +55,6 @@ export class BtnSettingsComponent implements OnInit {
   }
 
   //Set Title
-  useTrackTitle: boolean = true;
-  customName: string = '';
-
   onCustomName() {
     if (this.useTrackTitle) {
       this.btnTitle = this.fileName;
@@ -62,15 +64,16 @@ export class BtnSettingsComponent implements OnInit {
   }
 
   //Choose color
-  btnColor: string = '';
-
   setColor(value: string) {
     this.btnColor = value;
-    console.log(this.btnColor);
-    console.log(this.btnTitle);
-    console.log(this.useTrackTitle);
-    console.log(this.inGroup);
-    console.log(this.loop);
+    console.log('btnColor: ' + this.btnColor);
+    console.log('btnTitle: ' + this.btnTitle);
+    console.log('useTrackTitle: ' + this.useTrackTitle);
+    console.log('volume: ' + this.volume);
+    console.log('trimStart: ' + this.trimStart);
+    console.log('trimEnd: ' + this.trimEnd);
+    console.log('inGroup: ' + this.inGroup);
+    console.log('loop: ' + this.loop);
   }
 
   ngOnInit(): void {}

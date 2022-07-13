@@ -1,5 +1,5 @@
 export interface iButton {
-  id?: number;
+  btnId: number;
   btnTitle: string;
   audioData: any;
   volume: number;

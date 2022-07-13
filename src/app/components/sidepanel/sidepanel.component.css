@@ -1,25 +1,39 @@
 .sidepanel {
-    /* background-color: #0050EF; */
-    height: auto;
-    margin-right: 7px;
-    margin-top: 18px;
-    width: 4em;
-    float: right;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  /* background-color: #0050EF; */
+  height: auto;
+  margin-right: 7px;
+  margin-top: 18px;
+  width: 4em;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .sidepanel-volume {
-    margin-top: 6em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.mat-slider {
-    height: 250px;
+mat-slider {
+  height: 250px;
 }
 
+:host ::ng-deep .mat-slider-thumb-label {
+  background-color: #0a691a !important;
+}
 
+:host ::ng-deep .mat-slider-track-fill {
+  background-color: #0a691a !important;
+}
+:host ::ng-deep .mat-slider-thumb {
+  background-color: rgb(117, 146, 123) !important;
+  border-color: rgb(107, 107, 107) !important;
+}
+
+:host ::ng-deep .mat-slider-thumb-label {
+  background-color: #0a691a !important;
+}

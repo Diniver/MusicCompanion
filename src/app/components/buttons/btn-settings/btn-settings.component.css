@@ -1,55 +1,86 @@
 h3 {
-    text-align: left;
+  text-align: left;
 }
 
 #confirm-menu {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .option-style {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start !important; 
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  flex-wrap: wrap;
 }
 
-.options{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .play {
-    border-width: 0.15rem !important;
-    border-style: solid;
-    margin: 0.5em;
-    transition-duration: 300ms;
-    border-radius: 0.4em;
-    width: 40px;
-    height: 40px;  
+  border-width: 0.15rem !important;
+  border-style: solid;
+  margin: 0.5em;
+  transition-duration: 300ms;
+  border-radius: 0.4em;
+  width: 40px;
+  height: 40px;
 }
 
 .coloroptions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border: none;
 }
 
-.toggle-margin{
-    margin-top: 13px;
-    margin-bottom: 13px;
+.toggle-margin {
+  margin-top: 13px;
+  margin-bottom: 13px;
 }
 h3 {
-    letter-spacing: 0.2rem;
-    font-size: 1.3em;
+  letter-spacing: 0.2rem;
+  font-size: 1.3em;
 }
 
 .mat-slider-thumb {
-    background-color: #001DBC;
+  background-color: #001dbc;
+}
+
+mat-slider {
+  width: 200px;
+}
+
+::ng-deep .mat-slider-track-fill {
+  background-color: #001dbc !important;
+}
+::ng-deep .mat-slider-thumb {
+  background-color: #7d88c4 !important;
+  border-color: rgb(107, 107, 107) !important;
+}
+
+::ng-deep .mat-slider-thumb-label {
+  background-color: #454872 !important;
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 14px;
+  text-align: center;
+}
+
+.trim-head {
+  margin-bottom: -15px;
+}
+.trim-label {
+  margin-top: 5px;
+  width: 79px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

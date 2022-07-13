@@ -1,148 +1,132 @@
 @font-face {
-    font-family: Orbitron;
-    src: url(assets/font/Orbitron-VariableFont_wght.ttf);
-    font-weight: bold;
+  font-family: Orbitron;
+  src: url(assets/font/Orbitron-VariableFont_wght.ttf);
+  font-weight: bold;
 }
 
 html,
 body {
-    font-size: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #aaa;
-
+  font-size: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #aaa;
 }
 
 button {
-    transition-duration: 300ms;
-    border-width: 0;
-    border-radius: 0.4em;
+  transition-duration: 300ms;
+  border-width: 0;
+  border-radius: 0.4em;
 }
 
 button:hover {
-    box-shadow: 0 0.3rem 0.5rem 0.01rem rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0.3rem 0.5rem 0.01rem rgba(0, 0, 0, 0.24);
 }
 
 .mat-dialog-container {
-    background-color: #aaa;
+  background-color: #aaa;
 }
 
 .mat-typography h1 {
-    font-family: Orbitron;
-    letter-spacing: 0.1em;
-    font-size: 3rem;
+  font-family: Orbitron;
+  letter-spacing: 0.1em;
+  font-size: 3rem;
 }
 
 .mat-typography h2 {
-    font-family: Orbitron;
-    letter-spacing: 0.2rem;
-    font-size: 1.6em;
-
+  font-family: Orbitron;
+  letter-spacing: 0.2rem;
+  font-size: 1.6em;
 }
 .mat-typography h3 {
-    font-family: Orbitron;
+  font-family: Orbitron;
 }
 
 .mat-toolbar-single-row {
-    font-family: Orbitron;
-    font-size: 2.3rem;
-    letter-spacing: 0.1em;
-    background-color: rgba(26, 82, 21, 0.199);
+  font-family: Orbitron;
+  font-size: 2.3rem;
+  letter-spacing: 0.1em;
+  background-color: rgba(26, 82, 21, 0.199);
 }
 
 .mat-raised-button.mat-primary {
-    background-color: #454872;
-}
-
-.mat-slider-thumb {
-    background-color: rgb(117, 146, 123) !important;
-    border-color: rgb(107, 107, 107) !important;
-
-}
-
-.mat-slider-thumb-label {
-    background-color: #0a691a !important;
-}
-
-.mat-slider-track-fill {
-    background-color: #0a691a !important;
+  background-color: #454872;
 }
 
 .green {
-    background-color: #D5E8D4 !important; 
-    border-color: #82B366 !important;
+  background-color: #d5e8d4 !important;
+  border-color: #82b366 !important;
 }
 
 .green-active {
-    background-color: #60a917 !important;
-    border-color: #2d7600 !important;
+  background-color: #60a917 !important;
+  border-color: #2d7600 !important;
 }
 
 .yellow {
-    background-color: #fff2cc !important;
-    border-color: #d6b656 !important;
+  background-color: #fff2cc !important;
+  border-color: #d6b656 !important;
 }
 
 .yellow-active {
-    background-color: #e3c800 !important;
-    border-color: #b09500 !important;
+  background-color: #e3c800 !important;
+  border-color: #b09500 !important;
 }
 
 .orange {
-    background-color: #f8cecc !important;
-    border-color: #b85450 !important;
+  background-color: #f8cecc !important;
+  border-color: #b85450 !important;
 }
 
 .orange-active {
-    background-color: #fa6800 !important;
-    border-color: #c73500 !important;
+  background-color: #fa6800 !important;
+  border-color: #c73500 !important;
 }
 
 .purple {
-    background-color: #e1d5e7 !important;
-    border-color: #9673a6 !important;
+  background-color: #e1d5e7 !important;
+  border-color: #9673a6 !important;
 }
 
-.purple-active{
-    background-color: #76608a !important;
-    border-color: #432d57 !important;
-    color: whitesmoke
+.purple-active {
+  background-color: #76608a !important;
+  border-color: #432d57 !important;
+  color: whitesmoke;
 }
 
 .teal {
-    background-color: #B0E3E6 !important;
-    border-color: #0E8088 !important;
+  background-color: #b0e3e6 !important;
+  border-color: #0e8088 !important;
 }
 
 .teal-active {
-    background-color: #1BA1E2 !important;
-    border-color: #006EAF !important;
-    color: whitesmoke
+  background-color: #1ba1e2 !important;
+  border-color: #006eaf !important;
+  color: whitesmoke;
 }
 
 .blue {
-    background-color: #DAE8FC !important;
-    border-color: #6C8EBF !important;
+  background-color: #dae8fc !important;
+  border-color: #6c8ebf !important;
 }
 
 .blue-active {
-    background-color: #0050EF !important;
-    border-color: #001DBC !important;
-    color: whitesmoke
+  background-color: #0050ef !important;
+  border-color: #001dbc !important;
+  color: whitesmoke;
 }
 
 .poo {
-    background-color: #FFE6CC !important;
-    border-color: #D79B00 !important;
+  background-color: #ffe6cc !important;
+  border-color: #d79b00 !important;
 }
 
 .poo-active {
-    background-color: #F0A30A !important;
-    border-color: #BD7000 !important;
-    color: whitesmoke
+  background-color: #f0a30a !important;
+  border-color: #bd7000 !important;
+  color: whitesmoke;
 }
 
 .hidden {
-display: none;  
+  display: none;
 }

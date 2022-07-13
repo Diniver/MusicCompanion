@@ -1,17 +1,22 @@
 <!-- Side panel - volume control -->
 <div class="sidepanel">
- 
+  <button mat-icon-button>
+    <mat-icon>stop</mat-icon>
+  </button>
+  <div class="sidepanel-volume">
     <button mat-icon-button>
-      <mat-icon>stop</mat-icon>
+      <mat-icon>volume_up</mat-icon>
     </button>
-    <div class="sidepanel-volume">
-      <button mat-icon-button>
-        <mat-icon>volume_up</mat-icon>
-      </button>
-      <mat-slider vertical></mat-slider>
-      <button mat-icon-button>
-        <mat-icon>volume_down</mat-icon>
-      </button>
-    </div>
+    <mat-slider
+      vertical
+      thumbLabel
+      aria-label="units"
+      min="0"
+      max="100"
+      value="100"
+    ></mat-slider>
+    <button mat-icon-button>
+      <mat-icon>volume_down</mat-icon>
+    </button>
   </div>
-  
+</div>
