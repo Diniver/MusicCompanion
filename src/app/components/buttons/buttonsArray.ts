@@ -1,0 +1,31 @@
+import { iButton } from './iButton';
+export const Buttons: iButton[] = [
+  {
+    btnId: 1,
+    btnTitle: 'Title1',
+    fileName: 'Filename1',
+    useTrackTitle: false,
+    audioData: '',
+    volume: 100,
+    color: 'green',
+    inGroup: false,
+    loop: false,
+    trimStart: 0,
+    trimEnd: 0,
+    isActive: false,
+  },
+  {
+    btnId: 2,
+    btnTitle: 'Title2',
+    fileName: 'Filename2',
+    useTrackTitle: false,
+    audioData: '',
+    volume: 50,
+    color: 'green',
+    inGroup: false,
+    loop: false,
+    trimStart: 0,
+    trimEnd: 0,
+    isActive: false,
+  },
+];

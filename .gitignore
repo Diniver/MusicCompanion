@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Button array
-buttonsArray.ts
+#buttonsArray.ts
