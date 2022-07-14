@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { iButton } from '../iButton';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { BtnSettingsComponent } from '../btn-settings/btn-settings.component';
 
 @Component({
@@ -24,8 +24,10 @@ export class BtnComponent implements OnInit {
     }
   }
 
-  openSettings(button: iButton) {
-    this.matDialog.open(BtnSettingsComponent);
+  openSettings() {
+    this.matDialog.open(BtnSettingsComponent, {
+      data: this.button,
+    });
   }
 
   ngOnInit(): void {

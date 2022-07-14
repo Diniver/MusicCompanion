@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { iButton } from '../iButton';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-btn-settings',
@@ -13,17 +14,20 @@ export class BtnSettingsComponent implements OnInit {
   btnTitle: string = '';
   audioData: any = '';
   fileName: string = '';
-  useTrackTitle: boolean = true;
+  useTrackTitle: boolean;
   customName: string = '';
   btnColor: string = '';
   volume: number = 100;
-  loop: boolean = false;
-  inGroup: boolean = false;
+  loop: boolean;
+  inGroup: boolean;
   trimStart: number = 0;
   trimEnd: number = 0;
-  isActive: boolean = false;
+  isActive: boolean;
 
-  constructor(private domSanitizer: DomSanitizer) {}
+  constructor(
+    private domSanitizer: DomSanitizer,
+    @Inject(MAT_DIALOG_DATA) public data: iButton
+  ) {}
 
   // Select Audio file
   onFileInput(event: any) {
@@ -77,8 +81,33 @@ export class BtnSettingsComponent implements OnInit {
     console.log('trimEnd: ' + this.trimEnd);
     console.log('inGroup: ' + this.inGroup);
     console.log('loop: ' + this.loop);
-    // console.log('data: ' + this.audioData);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //Data is received from btn.component.
+    if (this.data) {
+      this.btnId = this.data.btnId;
+      this.btnTitle = this.data.btnTitle;
+      this.fileName = this.data.fileName;
+      this.useTrackTitle = this.data.useTrackTitle;
+      this.audioData = this.data.audioData;
+      this.volume = this.data.volume;
+      this.btnColor = this.data.color;
+      this.inGroup = this.data.inGroup;
+      this.loop = this.data.loop;
+      this.trimStart = this.data.trimStart;
+      this.trimEnd = this.data.trimEnd;
+    } else {
+      this.useTrackTitle = true;
+      this.inGroup = false;
+      this.loop = false;
+      return;
+    }
+    if (this.useTrackTitle) {
+      this.btnTitle = this.fileName;
+    } else {
+      this.customName = this.data.btnTitle;
+      this.btnTitle = this.data.btnTitle;
+    }
+  }
 }

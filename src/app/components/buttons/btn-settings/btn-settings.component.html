@@ -114,7 +114,10 @@
   </div>
   <!-- In Groups -->
   <div class="toggle-margin">
-    <mat-slide-toggle color="primary" (toggleChange)="inGroup = !inGroup"
+    <mat-slide-toggle
+      color="primary"
+      [checked]="inGroup"
+      (toggleChange)="inGroup = !inGroup"
       >Color in group</mat-slide-toggle
     >
     <mat-icon
@@ -124,8 +127,12 @@
       >info</mat-icon
     >
   </div>
+  <!-- Loop -->
   <div class="toggle-margin">
-    <mat-slide-toggle color="primary" (toggleChange)="loop = !loop"
+    <mat-slide-toggle
+      color="primary"
+      [checked]="loop"
+      (toggleChange)="loop = !loop"
       >Loop</mat-slide-toggle
     >
   </div>
