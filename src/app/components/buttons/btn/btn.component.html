@@ -1,8 +1,4 @@
-<button
-  class="play"
-  [ngClass]="class"
-  (click)="playStop()"
-  (dblclick)="openSettings()"
->
+<button class="play" [ngClass]="class" (click)="openSettings(button)">
   {{ button.btnTitle }}
 </button>
+<!-- (click)="playStop()" -->

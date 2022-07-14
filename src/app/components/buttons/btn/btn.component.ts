@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { iButton } from '../iButton';
 import { MatDialog } from '@angular/material/dialog';
+import { BtnSettingsComponent } from '../btn-settings/btn-settings.component';
 
 @Component({
   selector: 'app-btn',
@@ -14,8 +15,8 @@ export class BtnComponent implements OnInit {
   constructor(private matDialog: MatDialog) {}
 
   playStop() {
-    //Changing Style
     this.button.isActive = !this.button.isActive;
+    //Changing Style
     if (this.button.isActive) {
       this.class = this.button.color + '-active';
     } else {
@@ -23,8 +24,8 @@ export class BtnComponent implements OnInit {
     }
   }
 
-  openSettings() {
-    console.log('openSettings');
+  openSettings(button: iButton) {
+    this.matDialog.open(BtnSettingsComponent);
   }
 
   ngOnInit(): void {
