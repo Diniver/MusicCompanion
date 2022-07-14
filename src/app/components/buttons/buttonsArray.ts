@@ -7,7 +7,7 @@ export const Buttons: iButton[] = [
     useTrackTitle: false,
     audioData: '',
     volume: 100,
-    color: 'green',
+    color: 'purple',
     inGroup: false,
     loop: false,
     trimStart: 0,

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { iButton } from '../iButton';
 import { MatDialog } from '@angular/material/dialog';
-import { ButtonService } from '../../../services/button.service';
 
 @Component({
   selector: 'app-btn',
@@ -9,20 +8,26 @@ import { ButtonService } from '../../../services/button.service';
   styleUrls: ['./btn.component.css'],
 })
 export class BtnComponent implements OnInit {
-  buttons: iButton[] = [];
+  @Input() button: iButton;
+  class: string;
 
-  constructor(
-    private matDialog: MatDialog,
-    private buttonService: ButtonService
-  ) {}
+  constructor(private matDialog: MatDialog) {}
 
-  playStop() {}
+  playStop() {
+    //Changing Style
+    this.button.isActive = !this.button.isActive;
+    if (this.button.isActive) {
+      this.class = this.button.color + '-active';
+    } else {
+      this.class = this.button.color;
+    }
+  }
 
   openSettings() {
-    console.log('my horse is amazing');
+    console.log('openSettings');
   }
 
   ngOnInit(): void {
-    this.buttonService.getButtons().subscribe((btn) => (this.buttons = btn));
+    this.class = this.button.color;
   }
 }

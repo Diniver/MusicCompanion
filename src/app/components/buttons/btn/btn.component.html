@@ -1,6 +1,6 @@
 <button
-  class="play purple"
-  *ngFor="let button of buttons"
+  class="play"
+  [ngClass]="class"
   (click)="playStop()"
   (dblclick)="openSettings()"
 >

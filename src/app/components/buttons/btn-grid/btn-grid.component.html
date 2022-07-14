@@ -1,5 +1,5 @@
 <!-- Main button array -->
 <div class="grid-main">
-  <app-btn></app-btn>
+  <app-btn *ngFor="let button of buttons" [button]="button"></app-btn>
   <button class="add play" (click)="openBtnSettings()"></button>
 </div>
