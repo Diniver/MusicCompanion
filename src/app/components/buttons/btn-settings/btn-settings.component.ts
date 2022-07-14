@@ -11,7 +11,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class BtnSettingsComponent implements OnInit {
   title = 'Button Settings';
   btnId: number = 0;
-  btnTitle: string = '';
+  btnTitle: string;
   audioData: any = '';
   fileName: string = '';
   useTrackTitle: boolean;
@@ -81,10 +81,11 @@ export class BtnSettingsComponent implements OnInit {
     console.log('trimEnd: ' + this.trimEnd);
     console.log('inGroup: ' + this.inGroup);
     console.log('loop: ' + this.loop);
+    console.log('ID: ' + this.btnId);
   }
 
   ngOnInit(): void {
-    //Data is received from btn.component.
+    //Data is received from btn.component. There is something wrong with btn Title. not working properly when getin filename
     if (this.data) {
       this.btnId = this.data.btnId;
       this.btnTitle = this.data.btnTitle;
@@ -101,13 +102,12 @@ export class BtnSettingsComponent implements OnInit {
       this.useTrackTitle = true;
       this.inGroup = false;
       this.loop = false;
-      return;
     }
     if (this.useTrackTitle) {
-      this.btnTitle = this.fileName;
+      this.btnTitle = this.data.fileName;
     } else {
-      this.customName = this.data.btnTitle;
       this.btnTitle = this.data.btnTitle;
+      this.customName = this.data.btnTitle;
     }
   }
 }
