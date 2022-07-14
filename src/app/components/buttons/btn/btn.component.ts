@@ -24,7 +24,8 @@ export class BtnComponent implements OnInit {
     }
   }
 
-  openSettings() {
+  openSettings(event: any) {
+    event.preventDefault();
     this.matDialog.open(BtnSettingsComponent, {
       data: this.button,
     });

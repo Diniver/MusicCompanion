@@ -109,7 +109,6 @@ export class BtnSettingsComponent implements OnInit {
       if (this.useTrackTitle) {
         this.btnTitle = this.data.fileName;
         this.customName = this.btnTitle;
-        debugger;
       } else {
         this.btnTitle = this.data.btnTitle;
         this.customName = this.data.btnTitle;

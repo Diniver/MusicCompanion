@@ -1,4 +1,8 @@
-<button class="play" [ngClass]="class" (click)="openSettings()">
+<button
+  class="play"
+  [ngClass]="class"
+  (click)="playStop()"
+  (contextmenu)="openSettings($event)"
+>
   {{ button.btnTitle }}
 </button>
-<!-- (click)="playStop()" -->
