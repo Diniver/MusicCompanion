@@ -70,11 +70,20 @@ export class BtnSettingsComponent implements OnInit {
     }
   }
 
+  onRemove() {
+    //Check if btnID is 0 -> close
+  }
+
+  onSave() {
+    //check btnID if 0 btnID++ else use current ID
+  }
+
   //Choose color
   setColor(value: string) {
     this.btnColor = value;
     console.log('btnColor: ' + this.btnColor);
     console.log('btnTitle: ' + this.btnTitle);
+    console.log('customName: ' + this.customName);
     console.log('useTrackTitle: ' + this.useTrackTitle);
     console.log('volume: ' + this.volume);
     console.log('trimStart: ' + this.trimStart);
@@ -85,10 +94,9 @@ export class BtnSettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //Data is received from btn.component. There is something wrong with btn Title. not working properly when getin filename
+    //Data is received from btn.component.
     if (this.data) {
       this.btnId = this.data.btnId;
-      this.btnTitle = this.data.btnTitle;
       this.fileName = this.data.fileName;
       this.useTrackTitle = this.data.useTrackTitle;
       this.audioData = this.data.audioData;
@@ -98,16 +106,18 @@ export class BtnSettingsComponent implements OnInit {
       this.loop = this.data.loop;
       this.trimStart = this.data.trimStart;
       this.trimEnd = this.data.trimEnd;
+      if (this.useTrackTitle) {
+        this.btnTitle = this.data.fileName;
+        this.customName = this.btnTitle;
+        debugger;
+      } else {
+        this.btnTitle = this.data.btnTitle;
+        this.customName = this.data.btnTitle;
+      }
     } else {
       this.useTrackTitle = true;
       this.inGroup = false;
       this.loop = false;
-    }
-    if (this.useTrackTitle) {
-      this.btnTitle = this.data.fileName;
-    } else {
-      this.btnTitle = this.data.btnTitle;
-      this.customName = this.data.btnTitle;
     }
   }
 }

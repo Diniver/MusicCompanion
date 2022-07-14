@@ -138,7 +138,9 @@
   </div>
 
   <div id="confirm-menu">
-    <button mat-raised-button color="primary">Remove</button>
-    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary" (click)="onRemove()">
+      Remove
+    </button>
+    <button mat-raised-button color="primary" (click)="onSave()">Save</button>
   </div>
 </div>
