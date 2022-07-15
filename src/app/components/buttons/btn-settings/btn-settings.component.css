@@ -1,10 +1,22 @@
 h3 {
   text-align: left;
 }
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  border: none;
+  margin-top: -15px;
+}
+.mat-stroked-button {
+  border: none;
+}
 
 #confirm-menu {
   display: flex;
   justify-content: space-between;
+  margin-bottom: -10px;
 }
 
 button {
@@ -92,5 +104,14 @@ mat-slider {
     min-width: 38px;
     line-height: 26px;
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* #confirm-menu {
+    transform: scale(0.65);
+  } */
+  button {
+    font-size: 1em;
   }
 }

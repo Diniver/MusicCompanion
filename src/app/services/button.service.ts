@@ -12,8 +12,20 @@ export class ButtonService {
     const btn = of(Buttons);
     return btn;
   }
-  removeButton(id: number) {
+  removeButton(name: string) {
     let bttns: iButton[] = [];
     this.getButtons().subscribe((btns) => (bttns = btns));
+    let arrayID = bttns.findIndex((ari) => ari.fileName === name);
+    bttns.splice(arrayID, 1);
+  }
+  addButton(data: iButton) {
+    let bttns: iButton[] = [];
+    this.getButtons().subscribe((btns) => (bttns = btns));
+    let arrayID = bttns.findIndex((ari) => ari.fileName === data.fileName);
+    if (arrayID === -1) {
+      //check if filename exist in array if not push
+    } else {
+      // modify current one slice?
+    }
   }
 }

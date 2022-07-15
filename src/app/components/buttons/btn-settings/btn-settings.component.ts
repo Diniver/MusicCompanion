@@ -11,7 +11,6 @@ import { ButtonService } from 'src/app/services/button.service';
 })
 export class BtnSettingsComponent implements OnInit {
   title = 'Button Settings';
-  btnId: number = 0;
   btnTitle: string;
   audioData: any = '';
   fileName: string = '';
@@ -71,17 +70,31 @@ export class BtnSettingsComponent implements OnInit {
       this.btnTitle = this.customName;
     }
   }
-
+  // removing button from array
   onRemove() {
-    //Check if btnID is 0 -> close
-    if (this.btnId === 0) {
+    if (this.fileName === '') {
     } else {
-      this.service.removeButton(this.btnId);
+      this.service.removeButton(this.fileName);
     }
   }
-
+  // Creating new button
   onSave() {
-    //check btnID if 0 btnID++ else use current ID
+    if (this.fileName === '') {
+      alert('Please select an audio file');
+    } else {
+      let newData: any = {};
+      newData.btnTitle = this.btnTitle;
+      newData.fileName = this.fileName;
+      newData.useTrackTitle = this.useTrackTitle;
+      newData.audioData = this.audioData;
+      newData.volume = this.volume;
+      newData.color = this.btnColor;
+      newData.inGroup = this.inGroup;
+      newData.loop = this.loop;
+      newData.trimStart = this.trimStart;
+      newData.trimEnd = this.trimEnd;
+      this.service.addButton(newData);
+    }
   }
 
   //Choose color
@@ -96,13 +109,11 @@ export class BtnSettingsComponent implements OnInit {
     console.log('trimEnd: ' + this.trimEnd);
     console.log('inGroup: ' + this.inGroup);
     console.log('loop: ' + this.loop);
-    console.log('ID: ' + this.btnId);
   }
 
   ngOnInit(): void {
     //Data is received from btn.component.
     if (this.data) {
-      this.btnId = this.data.btnId;
       this.fileName = this.data.fileName;
       this.useTrackTitle = this.data.useTrackTitle;
       this.audioData = this.data.audioData;

@@ -1,4 +1,9 @@
-<h3>{{ title }}</h3>
+<div class="head">
+  <h3>{{ title }}</h3>
+  <button mat-stroked-button color="basic" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <p>{{ btnTitle }}</p>
 <div class="options">
   <div class="option-style">
@@ -19,10 +24,9 @@
     <!-- Button For set File -->
     <div>
       <button
-        style="transform: scale(0.75)"
         type="file"
-        mat-raised-button
-        color="primary"
+        mat-stroked-button
+        color="basic"
         (click)="fileInput.click()"
       >
         <mat-icon>folder_open</mat-icon>
@@ -142,6 +146,7 @@
       mat-raised-button
       color="primary"
       (click)="onRemove()"
+      *ngIf="fileName != ''"
       mat-dialog-close
     >
       Remove
@@ -150,9 +155,13 @@
       mat-raised-button
       color="primary"
       (click)="onSave()"
+      *ngIf="fileName != ''"
       mat-dialog-close
     >
       Save
+    </button>
+    <button mat-raised-button color="warn" *ngIf="fileName === ''">
+      Please select an audio file
     </button>
   </div>
 </div>
