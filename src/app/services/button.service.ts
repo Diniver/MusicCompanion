@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { iButton } from '../components/buttons/iButton';
 import { Buttons } from '../components/buttons/buttonsArray';
 import { Observable, of } from 'rxjs';
@@ -12,8 +12,8 @@ export class ButtonService {
     const btn = of(Buttons);
     return btn;
   }
-  removeButton(btnId: number) {
-    let btns = this.getButtons();
-    console.log(btns);
+  removeButton(id: number) {
+    let bttns: iButton[] = [];
+    this.getButtons().subscribe((btns) => (bttns = btns));
   }
 }

@@ -138,9 +138,21 @@
   </div>
 
   <div id="confirm-menu">
-    <button mat-raised-button color="primary" (click)="onRemove()">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onRemove()"
+      mat-dialog-close
+    >
       Remove
     </button>
-    <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onSave()"
+      mat-dialog-close
+    >
+      Save
+    </button>
   </div>
 </div>

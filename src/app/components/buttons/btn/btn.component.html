@@ -4,6 +4,7 @@
   (click)="playStop()"
   (contextmenu)="openSettings($event)"
 >
+  <!-- Loop and group Icons -->
   <div
     class="pena"
     [ngClass]="{
@@ -15,8 +16,11 @@
     {{ button.btnTitle }}
   </div>
   <div class="pencho">
-    <mat-icon>bubble_chart</mat-icon>
-    <mat-icon>repeat</mat-icon>
+    <div>
+      <mat-icon *ngIf="button.inGroup">bubble_chart</mat-icon>
+    </div>
+    <div>
+      <mat-icon *ngIf="button.loop">repeat</mat-icon>
+    </div>
   </div>
 </button>
-<!--  Add loop and groups indicators with check for boolean -->

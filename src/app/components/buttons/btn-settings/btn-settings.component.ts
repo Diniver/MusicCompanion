@@ -74,9 +74,7 @@ export class BtnSettingsComponent implements OnInit {
 
   onRemove() {
     //Check if btnID is 0 -> close
-
-    if ((this.btnId = 0)) {
-      return;
+    if (this.btnId === 0) {
     } else {
       this.service.removeButton(this.btnId);
     }
@@ -121,6 +119,7 @@ export class BtnSettingsComponent implements OnInit {
         this.btnTitle = this.data.btnTitle;
         this.customName = this.data.btnTitle;
       }
+      //If there is no data, do the following
     } else {
       this.useTrackTitle = true;
       this.inGroup = false;
