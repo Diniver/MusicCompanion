@@ -16,7 +16,7 @@ export const Buttons: iButton[] = [
   },
   {
     btnId: 2,
-    btnTitle: 'Title2',
+    btnTitle: 'I am the best, super duper  mega booba nerd',
     fileName: 'Filename2',
     useTrackTitle: false,
     audioData: '',

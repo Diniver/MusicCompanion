@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { iButton } from '../iButton';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ButtonService } from 'src/app/services/button.service';
 
 @Component({
   selector: 'app-btn-settings',
@@ -26,7 +27,8 @@ export class BtnSettingsComponent implements OnInit {
 
   constructor(
     private domSanitizer: DomSanitizer,
-    @Inject(MAT_DIALOG_DATA) public data: iButton
+    @Inject(MAT_DIALOG_DATA) public data: iButton,
+    private service: ButtonService
   ) {}
 
   // Select Audio file
@@ -72,6 +74,12 @@ export class BtnSettingsComponent implements OnInit {
 
   onRemove() {
     //Check if btnID is 0 -> close
+
+    if ((this.btnId = 0)) {
+      return;
+    } else {
+      this.service.removeButton(this.btnId);
+    }
   }
 
   onSave() {

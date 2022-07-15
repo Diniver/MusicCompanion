@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { iButton } from '../iButton';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { BtnSettingsComponent } from '../btn-settings/btn-settings.component';
 
 @Component({
@@ -11,6 +11,8 @@ import { BtnSettingsComponent } from '../btn-settings/btn-settings.component';
 export class BtnComponent implements OnInit {
   @Input() button: iButton;
   class: string;
+  loop: boolean;
+  inGroup: boolean;
 
   constructor(private matDialog: MatDialog) {}
 
@@ -33,5 +35,7 @@ export class BtnComponent implements OnInit {
 
   ngOnInit(): void {
     this.class = this.button.color;
+    this.loop = this.button.loop;
+    this.inGroup = this.button.inGroup;
   }
 }

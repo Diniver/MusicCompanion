@@ -12,4 +12,8 @@ export class ButtonService {
     const btn = of(Buttons);
     return btn;
   }
+  removeButton(btnId: number) {
+    let btns = this.getButtons();
+    console.log(btns);
+  }
 }
