@@ -160,8 +160,13 @@
     >
       Save
     </button>
-    <button mat-raised-button color="warn" *ngIf="fileName === ''">
-      Please select an audio file
-    </button>
   </div>
+  <button
+    style="display: flex; justify-content: center"
+    mat-stroked-button
+    disabled
+    *ngIf="fileName === ''"
+  >
+    Please select an audio file
+  </button>
 </div>
