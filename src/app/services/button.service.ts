@@ -23,9 +23,10 @@ export class ButtonService {
     this.getButtons().subscribe((btns) => (bttns = btns));
     let arrayID = bttns.findIndex((ari) => ari.fileName === data.fileName);
     if (arrayID === -1) {
-      //check if filename exist in array if not push
+      bttns.push(data);
     } else {
-      // modify current one slice?
+      // modify current one
+      bttns.splice(arrayID, 1, data);
     }
   }
 }
