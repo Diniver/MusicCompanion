@@ -1,14 +1,9 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  SimpleChanges,
-  DoCheck,
-} from '@angular/core';
+import { Component, Input, OnInit, DoCheck } from '@angular/core';
 import { iButton } from '../iButton';
 import { MatDialog } from '@angular/material/dialog';
 import { BtnSettingsComponent } from '../btn-settings/btn-settings.component';
 import { ButtonService } from 'src/app/services/button.service';
+import { AudioService } from 'src/app/services/audio.service';
 @Component({
   selector: 'app-btn',
   templateUrl: './btn.component.html',
@@ -20,14 +15,15 @@ export class BtnComponent implements OnInit, DoCheck {
 
   constructor(
     private matDialog: MatDialog,
-    private buttonService: ButtonService
+    private buttonService: ButtonService,
+    private audio: AudioService
   ) {}
 
-  playStop() {
+  init() {
     this.button.isActive = !this.button.isActive;
     this.buttonService.styleChange(this.button);
     this.buttonService.inGroup(this.button);
-    this.class = this.button.color;
+    this.audio.playStop(this.button);
     //Style is not shifting back
   }
   openSettings(event: any) {
@@ -42,6 +38,5 @@ export class BtnComponent implements OnInit, DoCheck {
   }
   ngDoCheck(): void {
     this.class = this.button.color;
-    this.button.isActive;
   }
 }

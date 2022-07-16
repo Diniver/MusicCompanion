@@ -1,9 +1,14 @@
 <button
   class="play"
   [ngClass]="class"
-  (click)="playStop()"
+  (click)="init()"
   (contextmenu)="openSettings($event)"
 >
+  <audio
+    style="display: none"
+    [id]="button.fileName"
+    [src]="button.audioData"
+  ></audio>
   <!-- Loop and group Icons -->
   <div
     class="pena"

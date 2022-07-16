@@ -1,7 +1,7 @@
 import { iButton } from './iButton';
 export const Buttons: iButton[] = [
   {
-    btnTitle: 'Title1',
+    btnTitle: '1',
     fileName: 'Filename1',
     useTrackTitle: true,
     audioData: '',
@@ -14,7 +14,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
-    btnTitle: 'I am the best, super duper  mega booba nerd',
+    btnTitle: '2',
     fileName: 'Filename2',
     useTrackTitle: false,
     audioData: '',
@@ -27,7 +27,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
-    btnTitle: 'Title3',
+    btnTitle: '3',
     fileName: 'Filename3',
     useTrackTitle: false,
     audioData: '',
@@ -40,7 +40,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
-    btnTitle: 'Title4',
+    btnTitle: '4',
     fileName: 'Filename4',
     useTrackTitle: true,
     audioData: '',
@@ -53,7 +53,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
-    btnTitle: 'Title5',
+    btnTitle: '5',
     fileName: 'Filename5',
     useTrackTitle: true,
     audioData: '',
@@ -66,7 +66,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
-    btnTitle: 'Title6',
+    btnTitle: '6',
     fileName: 'Filename6',
     useTrackTitle: true,
     audioData: '',

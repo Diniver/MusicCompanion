@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { iButton } from '../components/buttons/iButton';
 import { Buttons } from '../components/buttons/buttonsArray';
 import { Observable, of } from 'rxjs';
-
+import { AudioService } from './audio.service';
 @Injectable({
   providedIn: 'root',
 })
 export class ButtonService {
-  constructor() {}
+  constructor(private audioService: AudioService) {}
+
   getButtons(): Observable<iButton[]> {
     const btn = of(Buttons);
     return btn;
@@ -47,6 +48,7 @@ export class ButtonService {
       if (state.inGroup === true && bttns[x].isActive === true) {
         bttns[x].isActive = false;
         this.styleChange(bttns[x]);
+        this.audioService.playStop(bttns[x]);
       }
     });
   }

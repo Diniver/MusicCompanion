@@ -28,6 +28,8 @@ import { BtnGridComponent } from './components/buttons/btn-grid/btn-grid.compone
 import { PagesComponent } from './components/pages/pages.component';
 import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
 import { BtnComponent } from './components/buttons/btn/btn.component';
+import { ButtonService } from './services/button.service';
+import { AudioService } from './services/audio.service';
 
 @NgModule({
   declarations: [
