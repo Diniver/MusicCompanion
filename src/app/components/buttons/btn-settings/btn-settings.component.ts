@@ -100,15 +100,6 @@ export class BtnSettingsComponent implements OnInit {
   //Choose color
   setColor(value: string) {
     this.btnColor = value;
-    console.log('btnColor: ' + this.btnColor);
-    console.log('btnTitle: ' + this.btnTitle);
-    console.log('customName: ' + this.customName);
-    console.log('useTrackTitle: ' + this.useTrackTitle);
-    console.log('volume: ' + this.volume);
-    console.log('trimStart: ' + this.trimStart);
-    console.log('trimEnd: ' + this.trimEnd);
-    console.log('inGroup: ' + this.inGroup);
-    console.log('loop: ' + this.loop);
   }
 
   ngOnInit(): void {
@@ -118,7 +109,8 @@ export class BtnSettingsComponent implements OnInit {
       this.useTrackTitle = this.data.useTrackTitle;
       this.audioData = this.data.audioData;
       this.volume = this.data.volume;
-      this.btnColor = this.data.color;
+      this.btnColor = this.data.color.replace('-active', '');
+      this.isActive = this.data.isActive = false;
       this.inGroup = this.data.inGroup;
       this.loop = this.data.loop;
       this.trimStart = this.data.trimStart;
