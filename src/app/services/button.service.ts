@@ -26,6 +26,12 @@ export class ButtonService {
       this.btns.push(data);
     } else {
       // modify current one
+      // if (data.volume !== this.btns[arrayID].volume) {
+      //   this.btns[arrayID].volume = data.volume;
+      //   console.log(this.btns[arrayID].volume);
+      //   console.log(data.volume);
+      //   // this.audioService.volume(this.btns[arrayID].volume)
+      // }
       this.btns.splice(arrayID, 1, data);
     }
   }

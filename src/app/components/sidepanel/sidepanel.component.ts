@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonService } from 'src/app/services/button.service';
-import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-sidepanel',

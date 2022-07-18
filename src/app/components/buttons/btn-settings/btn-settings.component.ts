@@ -18,7 +18,7 @@ export class BtnSettingsComponent implements OnInit {
   useTrackTitle: boolean;
   customName: string = '';
   btnColor: string = 'purple';
-  volume: number = 100;
+  volume: number = 70;
   loop: boolean;
   inGroup: boolean;
   trimStart: number = 0;
@@ -87,6 +87,7 @@ export class BtnSettingsComponent implements OnInit {
         // this.btnID = btoa(this.fileName);
         this.btnID = new Date().getTime().toString();
       }
+
       let newData: any = {};
       newData.btnID = this.btnID;
       newData.btnTitle = this.btnTitle;

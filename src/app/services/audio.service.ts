@@ -22,4 +22,7 @@ export class AudioService {
   fade() {
     //Add fade volume calculation
   }
+  volume() {
+    //
+  }
 }
