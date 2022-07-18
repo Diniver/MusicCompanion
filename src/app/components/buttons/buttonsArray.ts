@@ -1,6 +1,7 @@
 import { iButton } from './iButton';
 export const Buttons: iButton[] = [
   {
+    btnID: 'Filename1',
     btnTitle: '1',
     fileName: 'Filename1',
     useTrackTitle: true,
@@ -14,6 +15,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
+    btnID: 'Filename2',
     btnTitle: '2',
     fileName: 'Filename2',
     useTrackTitle: false,
@@ -27,6 +29,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
+    btnID: 'Filename3',
     btnTitle: '3',
     fileName: 'Filename3',
     useTrackTitle: false,
@@ -40,6 +43,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
+    btnID: 'Filename4',
     btnTitle: '4',
     fileName: 'Filename4',
     useTrackTitle: true,
@@ -53,6 +57,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
+    btnID: 'Filename5',
     btnTitle: '5',
     fileName: 'Filename5',
     useTrackTitle: true,
@@ -66,6 +71,7 @@ export const Buttons: iButton[] = [
     isActive: false,
   },
   {
+    btnID: 'Filename6',
     btnTitle: '6',
     fileName: 'Filename6',
     useTrackTitle: true,

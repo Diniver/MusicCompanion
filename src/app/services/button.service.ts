@@ -16,12 +16,12 @@ export class ButtonService {
     const btn = of(Buttons);
     return btn;
   }
-  removeButton(name: string) {
-    let arrayID = this.btns.findIndex((x) => x.fileName === name);
+  removeButton(btnID: string) {
+    let arrayID = this.btns.findIndex((x) => x.btnID === btnID);
     this.btns.splice(arrayID, 1);
   }
   addButton(data: iButton) {
-    let arrayID = this.btns.findIndex((x) => x.fileName === data.fileName);
+    let arrayID = this.btns.findIndex((x) => x.btnID === data.btnID);
     if (arrayID === -1) {
       this.btns.push(data);
     } else {
@@ -38,7 +38,7 @@ export class ButtonService {
         this.btns[i].inGroup === state.inGroup
       ) {
         //removing the current btnID from the array
-        if (this.btns[i].fileName != state.fileName) arrayColor.push(i);
+        if (this.btns[i].btnID != state.btnID) arrayColor.push(i);
       }
     }
     arrayColor.forEach((x) => {
@@ -50,12 +50,14 @@ export class ButtonService {
     });
   }
   styleChange(btn: iButton) {
-    let arrayID = this.btns.findIndex((x) => x.fileName === btn.fileName);
+    let arrayID = this.btns.findIndex((x) => x.btnID === btn.btnID);
     if (btn.isActive && btn.color === this.btns[arrayID].color) {
       this.btns[arrayID].color = this.btns[arrayID].color + '-active';
     } else if (btn.isActive === false) {
-      let x: string = '';
-      this.btns[arrayID].color = this.btns[arrayID].color.replace('-active', x);
+      this.btns[arrayID].color = this.btns[arrayID].color.replace(
+        '-active',
+        ''
+      );
     }
   }
 }

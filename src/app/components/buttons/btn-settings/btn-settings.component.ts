@@ -11,6 +11,7 @@ import { ButtonService } from 'src/app/services/button.service';
 })
 export class BtnSettingsComponent implements OnInit {
   title = 'Button Settings';
+  btnID: string;
   btnTitle: string;
   audioData: any = '';
   fileName: string = '';
@@ -74,7 +75,7 @@ export class BtnSettingsComponent implements OnInit {
   onRemove() {
     if (this.fileName === '') {
     } else {
-      this.service.removeButton(this.fileName);
+      this.service.removeButton(this.btnID);
     }
   }
   // Creating new button
@@ -82,13 +83,18 @@ export class BtnSettingsComponent implements OnInit {
     if (this.fileName === '') {
       alert('Please select an audio file');
     } else {
+      if (this.btnID === '') {
+        // this.btnID = btoa(this.fileName);
+        this.btnID = new Date().getTime().toString();
+      }
       let newData: any = {};
+      newData.btnID = this.btnID;
       newData.btnTitle = this.btnTitle;
       newData.fileName = this.fileName;
       newData.useTrackTitle = this.useTrackTitle;
       newData.audioData = this.audioData;
       newData.volume = this.volume;
-      newData.color = this.btnColor;
+      newData.color = this.btnColor.replace('-active', '');
       newData.inGroup = this.inGroup;
       newData.loop = this.loop;
       newData.trimStart = this.trimStart;
@@ -105,11 +111,12 @@ export class BtnSettingsComponent implements OnInit {
   ngOnInit(): void {
     //Data is received from btn.component.
     if (this.data) {
+      this.btnID = this.data.btnID;
       this.fileName = this.data.fileName;
       this.useTrackTitle = this.data.useTrackTitle;
       this.audioData = this.data.audioData;
       this.volume = this.data.volume;
-      this.btnColor = this.data.color.replace('-active', '');
+      this.btnColor = this.data.color;
       this.isActive = this.data.isActive = false;
       this.inGroup = this.data.inGroup;
       this.loop = this.data.loop;
@@ -127,6 +134,7 @@ export class BtnSettingsComponent implements OnInit {
       this.useTrackTitle = true;
       this.inGroup = false;
       this.loop = false;
+      this.btnID = '';
     }
   }
 }

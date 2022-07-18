@@ -1,4 +1,5 @@
 export interface iButton {
+  btnID: string;
   btnTitle: string;
   fileName: string;
   useTrackTitle: boolean;
