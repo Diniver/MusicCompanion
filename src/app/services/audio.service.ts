@@ -19,4 +19,7 @@ export class AudioService {
       player.currentTime = btn.trimStart;
     }
   }
+  fade() {
+    //Add fade volume calculation
+  }
 }

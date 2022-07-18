@@ -61,4 +61,18 @@ export class ButtonService {
       );
     }
   }
+  stopAll() {
+    const arrayActive = [];
+    for (let i = 0; i < this.btns.length; i++) {
+      if (this.btns[i].isActive === true) {
+        arrayActive.push(i);
+      }
+    }
+    arrayActive.forEach((i) => {
+      this.btns[i].isActive = false;
+      this.audioService.playStop(this.btns[i]);
+      this.styleChange(this.btns[i]);
+      this.audioService.fade();
+    });
+  }
 }
