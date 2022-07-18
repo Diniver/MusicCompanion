@@ -50,6 +50,7 @@ export class ButtonService {
     });
   }
   styleChange(btn: iButton) {
+    // there is some weird bug which brakes the colors in group if btn crurrently playing, during save ?!?!
     let arrayID = this.btns.findIndex((x) => x.btnID === btn.btnID);
     if (btn.isActive && btn.color === this.btns[arrayID].color) {
       this.btns[arrayID].color = this.btns[arrayID].color + '-active';
