@@ -100,6 +100,7 @@ export class BtnSettingsComponent implements OnInit {
       newData.loop = this.loop;
       newData.trimStart = this.trimStart;
       newData.trimEnd = this.trimEnd;
+      newData.isActive = this.isActive;
       this.service.addButton(newData);
     }
   }
@@ -118,7 +119,7 @@ export class BtnSettingsComponent implements OnInit {
       this.audioData = this.data.audioData;
       this.volume = this.data.volume;
       this.btnColor = this.data.color;
-      this.isActive = this.data.isActive = false;
+      this.isActive = this.data.isActive;
       this.inGroup = this.data.inGroup;
       this.loop = this.data.loop;
       this.trimStart = this.data.trimStart;
@@ -135,6 +136,7 @@ export class BtnSettingsComponent implements OnInit {
       this.useTrackTitle = true;
       this.inGroup = false;
       this.loop = false;
+      this.isActive = false;
       this.btnID = '';
     }
   }

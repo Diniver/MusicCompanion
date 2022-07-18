@@ -10,6 +10,7 @@ export class AudioService {
   playStop(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = btn.volume / 100;
+    //when song finishes needs to change color back to normal
     player.loop = btn.loop;
     if (btn.isActive) {
       player.currentTime = btn.trimStart;

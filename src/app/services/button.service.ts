@@ -26,13 +26,23 @@ export class ButtonService {
       this.btns.push(data);
     } else {
       // modify current one
-      // if (data.volume !== this.btns[arrayID].volume) {
-      //   this.btns[arrayID].volume = data.volume;
-      //   console.log(this.btns[arrayID].volume);
-      //   console.log(data.volume);
-      //   // this.audioService.volume(this.btns[arrayID].volume)
-      // }
-      this.btns.splice(arrayID, 1, data);
+      // this.btns.splice(arrayID, 1, data);
+      this.btns[arrayID].btnTitle = data.btnTitle;
+      this.btns[arrayID].color = data.color;
+      this.btns[arrayID].fileName = data.fileName;
+      this.btns[arrayID].inGroup = data.inGroup;
+      this.btns[arrayID].loop = data.loop;
+      this.btns[arrayID].trimEnd = data.trimEnd;
+      this.btns[arrayID].trimStart = data.trimStart;
+      this.btns[arrayID].useTrackTitle = data.useTrackTitle;
+      this.btns[arrayID].volume = data.volume;
+      this.btns[arrayID].isActive = data.isActive;
+      if (data.audioData !== this.btns[arrayID].audioData) {
+        this.btns[arrayID].audioData = data.audioData;
+      }
+      this.styleChange(data);
+      //Audio resets. Needs to be rebuild!!!
+      this.audioService.playStop(data);
     }
   }
   inGroup(state: iButton) {
