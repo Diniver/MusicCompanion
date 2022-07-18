@@ -7,60 +7,55 @@ import { AudioService } from './audio.service';
   providedIn: 'root',
 })
 export class ButtonService {
-  constructor(private audioService: AudioService) {}
+  btns: iButton[] = [];
+  constructor(private audioService: AudioService) {
+    this.getButtons().subscribe((x) => (this.btns = x));
+  }
 
   getButtons(): Observable<iButton[]> {
     const btn = of(Buttons);
     return btn;
   }
   removeButton(name: string) {
-    let bttns: iButton[] = [];
-    this.getButtons().subscribe((btns) => (bttns = btns));
-    let arrayID = bttns.findIndex((ari) => ari.fileName === name);
-    bttns.splice(arrayID, 1);
+    let arrayID = this.btns.findIndex((x) => x.fileName === name);
+    this.btns.splice(arrayID, 1);
   }
   addButton(data: iButton) {
-    let bttns: iButton[] = [];
-    this.getButtons().subscribe((btns) => (bttns = btns));
-    let arrayID = bttns.findIndex((ari) => ari.fileName === data.fileName);
+    let arrayID = this.btns.findIndex((x) => x.fileName === data.fileName);
     if (arrayID === -1) {
-      bttns.push(data);
+      this.btns.push(data);
     } else {
       // modify current one
-      bttns.splice(arrayID, 1, data);
+      this.btns.splice(arrayID, 1, data);
     }
   }
   inGroup(state: iButton) {
-    let bttns: iButton[] = [];
-    this.getButtons().subscribe((btns) => (bttns = btns));
     const arrayColor = [];
     //Getting IDs with Color equal to source and making array
-    for (let i = 0; i < bttns.length; i++) {
+    for (let i = 0; i < this.btns.length; i++) {
       if (
-        bttns[i].color === state.color &&
-        bttns[i].inGroup === state.inGroup
+        this.btns[i].color === state.color &&
+        this.btns[i].inGroup === state.inGroup
       ) {
         //removing the current btnID from the array
-        if (bttns[i].fileName != state.fileName) arrayColor.push(i);
+        if (this.btns[i].fileName != state.fileName) arrayColor.push(i);
       }
     }
     arrayColor.forEach((x) => {
-      if (state.inGroup === true && bttns[x].isActive === true) {
-        bttns[x].isActive = false;
-        this.styleChange(bttns[x]);
-        this.audioService.playStop(bttns[x]);
+      if (state.inGroup === true && this.btns[x].isActive === true) {
+        this.btns[x].isActive = false;
+        this.styleChange(this.btns[x]);
+        this.audioService.playStop(this.btns[x]);
       }
     });
   }
   styleChange(btn: iButton) {
-    let bttns: iButton[] = [];
-    this.getButtons().subscribe((btns) => (bttns = btns));
-    let arrayID = bttns.findIndex((ari) => ari.fileName === btn.fileName);
-    if (btn.isActive && btn.color === bttns[arrayID].color) {
-      bttns[arrayID].color = bttns[arrayID].color + '-active';
+    let arrayID = this.btns.findIndex((x) => x.fileName === btn.fileName);
+    if (btn.isActive && btn.color === this.btns[arrayID].color) {
+      this.btns[arrayID].color = this.btns[arrayID].color + '-active';
     } else if (btn.isActive === false) {
       let x: string = '';
-      bttns[arrayID].color = bttns[arrayID].color.replace('-active', x);
+      this.btns[arrayID].color = this.btns[arrayID].color.replace('-active', x);
     }
   }
 }
