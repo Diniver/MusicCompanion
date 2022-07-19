@@ -7,9 +7,21 @@ import { ButtonService } from 'src/app/services/button.service';
   styleUrls: ['./sidepanel.component.css'],
 })
 export class SidepanelComponent implements OnInit {
+  value: number = 100;
   constructor(private buttonService: ButtonService) {}
+
   stopAll() {
     this.buttonService.stopAll();
+  }
+
+  setVolume() {
+    console.log(this.value);
+  }
+  volD() {
+    this.value = this.value - 5;
+  }
+  volU() {
+    this.value = this.value + 5;
   }
   ngOnInit(): void {}
 }

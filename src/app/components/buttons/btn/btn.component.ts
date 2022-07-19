@@ -33,9 +33,7 @@ export class BtnComponent implements OnInit, DoCheck {
     });
   }
 
-  ngOnInit(): void {
-    this.class = this.button.color;
-  }
+  ngOnInit(): void {}
   ngDoCheck(): void {
     this.class = this.button.color;
   }

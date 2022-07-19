@@ -42,7 +42,7 @@ export class ButtonService {
       }
       this.styleChange(data);
       //Audio resets. Needs to be rebuild!!!
-      this.audioService.playStop(data);
+      this.audioService.update(data);
     }
   }
   inGroup(state: iButton) {
