@@ -15,13 +15,19 @@ export class SidepanelComponent implements OnInit {
   }
 
   setVolume() {
-    console.log(this.value);
+    this.buttonService.volumeMainControl(this.value / 100);
   }
   volD() {
     this.value = this.value - 5;
+    if (this.value < 0) {
+      this.value = 0;
+    }
   }
   volU() {
     this.value = this.value + 5;
+    if (this.value > 100) {
+      this.value = 100;
+    }
   }
   ngOnInit(): void {}
 }

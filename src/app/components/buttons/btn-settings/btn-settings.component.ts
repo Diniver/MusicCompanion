@@ -41,6 +41,7 @@ export class BtnSettingsComponent implements OnInit {
       'application/ogg',
       'audio/flac',
       'audio/wav',
+      'audio/x-flac',
     ];
 
     if (audioFormatArr.includes(file.type)) {

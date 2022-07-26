@@ -78,6 +78,7 @@ export class ButtonService {
     }
   }
   stopAll() {
+    //this is here since I need to check all buttons
     const arrayActive = [];
     for (let i = 0; i < this.btns.length; i++) {
       if (this.btns[i].isActive === true) {
@@ -88,7 +89,28 @@ export class ButtonService {
       this.btns[i].isActive = false;
       this.audioService.playStop(this.btns[i]);
       this.styleChange(this.btns[i]);
+      // create fade
       this.audioService.fade();
     });
+  }
+  volumeMainControl(volM: number) {
+    //Gets all btn volumes and calculate avarage value. This value is sent to audio service
+    const arrVol = [];
+    for (let i = 0; i < this.btns.length; i++) {
+      arrVol.push(i);
+    }
+
+    let btnVol: number;
+    arrVol.forEach((i) => {
+      btnVol = this.btns[i].volume / 100;
+      let totalVol = btnVol * volM;
+      this.audioService.volumeMainControl(this.btns[i], totalVol);
+    });
+    // const sumVol = this.btns.reduce((acc, obj) => {
+    //   return acc + obj.volume;
+    // }, 0);
+    // console.log(sumVol);
+    // const avgVol = ((sumVol / this.btns.length) * volM);
+    // console.log(avgVol);
   }
 }
