@@ -11,10 +11,24 @@ export class AudioService {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     if (btn.isActive) {
       player.loop = btn.loop;
+      //Trimming the start
       player.currentTime = btn.trimStart;
       player.play();
       // this.fadeIn(btn); // It kinda works
       // on end resets style and sets active state to false
+      player.ontimeupdate = function () {
+        //Trimming the end
+        if (player.currentTime >= player.duration - btn.trimEnd) {
+          if (player.loop === true) {
+            player.currentTime = btn.trimStart;
+          } else {
+            player.pause();
+            player.currentTime = btn.trimStart;
+            btn.isActive = false;
+            btn.color = btn.color.replace('-active', '');
+          }
+        }
+      };
       player.onended = function () {
         btn.isActive = false;
         btn.color = btn.color.replace('-active', '');
@@ -65,7 +79,6 @@ export class AudioService {
     );
   }
   volumeMainControl(btn: iButton, totalVol: number) {
-    //
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = totalVol;
   }
