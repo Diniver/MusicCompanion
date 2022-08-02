@@ -25,13 +25,12 @@ export class BtnSettingsComponent implements OnInit {
   trimStart: number = 0;
   trimEnd: number = 0;
   isActive: boolean;
-  trackDuration: number = 140;
 
   constructor(
     private domSanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: iButton,
     private service: ButtonService,
-    private audioService: AudioService
+    private audioS: AudioService
   ) {}
 
   // Select Audio file
@@ -89,7 +88,7 @@ export class BtnSettingsComponent implements OnInit {
       alert('Please select an audio file');
     } else {
       if (this.btnID === '') {
-        // this.btnID = btoa(this.fileName);
+        //ID from time
         this.btnID = new Date().getTime().toString();
       }
 
