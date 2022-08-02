@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { iButton } from '../iButton';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ButtonService } from 'src/app/services/button.service';
+import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-btn-settings',
@@ -24,11 +25,13 @@ export class BtnSettingsComponent implements OnInit {
   trimStart: number = 0;
   trimEnd: number = 0;
   isActive: boolean;
+  trackDuration: number = 140;
 
   constructor(
     private domSanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: iButton,
-    private service: ButtonService
+    private service: ButtonService,
+    private audioService: AudioService
   ) {}
 
   // Select Audio file

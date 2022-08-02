@@ -24,7 +24,6 @@ export class BtnComponent implements OnInit, DoCheck {
     this.buttonService.styleChange(this.button);
     this.buttonService.inGroup(this.button);
     this.audio.playStop(this.button);
-    //Style is not shifting back
   }
   openSettings(event: any) {
     event.preventDefault();

@@ -98,6 +98,9 @@ mat-slider {
   margin-left: 10px;
   margin-right: 10px;
 }
+.trim-duration {
+  display: flex;
+}
 @media only screen and (max-width: 300px) {
   mat-slider {
     width: 50px;

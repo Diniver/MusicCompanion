@@ -49,11 +49,6 @@
       >Use track title</mat-slide-toggle
     >
   </div>
-  <!-- Audio Test -->
-  <!-- <div>
-    <audio controls [src]="audioData"></audio>
-  </div> -->
-  <!-- Volume -->
   <div>
     <mat-slider
       min="0"
@@ -75,15 +70,23 @@
         >info</mat-icon
       >
     </div>
-    <div>
-      <mat-form-field class="trim-label" appearance="standard">
-        <mat-label class="labelsize">Start</mat-label>
-        <input matInput [(ngModel)]="trimStart" />
-      </mat-form-field>
-      <mat-form-field class="trim-label" appearance="standard">
-        <mat-label class="labelsize">End</mat-label>
-        <input matInput [(ngModel)]="trimEnd" />
-      </mat-form-field>
+    <div class="trim-duration">
+      <div>
+        <mat-form-field class="trim-label" appearance="standard">
+          <mat-label class="labelsize">Start</mat-label>
+          <input matInput [(ngModel)]="trimStart" />
+        </mat-form-field>
+        <mat-form-field class="trim-label" appearance="standard">
+          <mat-label class="labelsize">End</mat-label>
+          <input matInput [(ngModel)]="trimEnd" />
+        </mat-form-field>
+      </div>
+      <div style="padding-left: 40px">
+        <mat-form-field class="trim-label" appearance="standard">
+          <mat-label class="labelsize">Duration</mat-label>
+          <input matInput disabled="true" [(ngModel)]="trackDuration" />
+        </mat-form-field>
+      </div>
     </div>
   </div>
 
