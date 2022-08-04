@@ -35,7 +35,6 @@ export class BackuprestoreComponent implements OnInit {
       '' +
       today.getMinutes();
     this.filename = 'DMMC_' + name + '.json';
-    console.log(this.filename);
   }
   restore() {
     //
