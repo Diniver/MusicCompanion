@@ -10,7 +10,7 @@ export class AudioService {
   playStop(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     if (btn.isActive) {
-      player.loop = btn.loop;
+      this.update(btn);
       //Trimming the start
       player.currentTime = btn.trimStart;
       player.play();
@@ -42,6 +42,7 @@ export class AudioService {
   update(btn: iButton) {
     //updating settings
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
+    debugger;
     player.volume = btn.volume / 100;
     player.loop = btn.loop;
   }
