@@ -42,7 +42,6 @@ export class AudioService {
   update(btn: iButton) {
     //updating settings
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    debugger;
     player.volume = btn.volume / 100;
     player.loop = btn.loop;
   }

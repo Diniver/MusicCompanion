@@ -30,6 +30,7 @@ import { SidepanelComponent } from './components/sidepanel/sidepanel.component';
 import { BtnComponent } from './components/buttons/btn/btn.component';
 import { ButtonService } from './services/button.service';
 import { AudioService } from './services/audio.service';
+import { BackuprestoreComponent } from './components/header/menu/backuprestore/backuprestore.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AudioService } from './services/audio.service';
     PagesComponent,
     SidepanelComponent,
     BtnComponent,
+    BackuprestoreComponent,
   ],
   imports: [
     BrowserModule,

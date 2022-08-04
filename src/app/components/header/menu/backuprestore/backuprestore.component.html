@@ -1,0 +1,33 @@
+<div class="head">
+  <h3>{{ title }}</h3>
+  <button mat-stroked-button color="basic" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div>
+  <p>
+    You can save or restore current configuration from here.
+    <br />
+    File contains all tracks data and can be large.
+  </p>
+</div>
+<div class="buttons">
+  <a
+    mat-raised-button
+    color="primary"
+    mat-dialog-close
+    (click)="backup()"
+    [download]="filename"
+    >Backup</a
+  >
+  <!-- [href]="download" -->
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="restore()"
+    mat-dialog-close
+  >
+    Restore
+  </button>
+</div>
