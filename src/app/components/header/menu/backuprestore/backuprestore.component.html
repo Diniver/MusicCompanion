@@ -22,12 +22,14 @@
     >Backup</a
   >
 
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="restore()"
-    mat-dialog-close
-  >
+  <a mat-raised-button color="primary" (click)="restoreFile.click()">
     Restore
-  </button>
+    <input
+      #restoreFile
+      type="file"
+      class="hidden"
+      (change)="restore($event)"
+      accept=".json"
+    />
+  </a>
 </div>

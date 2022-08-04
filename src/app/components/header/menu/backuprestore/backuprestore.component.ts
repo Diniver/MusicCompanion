@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Buttons } from 'src/app/components/buttons/buttonsArray';
 import { iButton } from 'src/app/components/buttons/iButton';
+import { ButtonService } from 'src/app/services/button.service';
 
 @Component({
   selector: 'app-backuprestore',
@@ -14,7 +15,10 @@ export class BackuprestoreComponent implements OnInit {
   download: any;
   filename: string;
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private btnService: ButtonService
+  ) {}
 
   backup() {
     //
@@ -36,8 +40,19 @@ export class BackuprestoreComponent implements OnInit {
       today.getMinutes();
     this.filename = 'DMMC_' + name + '.json';
   }
-  restore() {
+  restore(event: any) {
     //
+    let reader = new FileReader();
+    reader.readAsText(event.target.files[0]);
+    reader.onloadend = () => {
+      let file = reader.result as string;
+      let newBtns = JSON.parse(file);
+      // Something happens on pushing the array
+      // this.btnService.restore(newBtns);
+    };
+    // this.btns = json
+    // let parsedJSON = JSON.parse(json);
+    // console.log(parsedJSON);
   }
 
   ngOnInit(): void {}

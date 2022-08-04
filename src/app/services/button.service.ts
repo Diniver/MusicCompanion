@@ -16,6 +16,10 @@ export class ButtonService {
     const btn = of(Buttons);
     return btn;
   }
+  restore(data: iButton) {
+    debugger;
+    this.btns.push(data);
+  }
   removeButton(btnID: string) {
     let arrayID = this.btns.findIndex((x) => x.btnID === btnID);
     this.btns.splice(arrayID, 1);
