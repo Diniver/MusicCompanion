@@ -21,7 +21,7 @@ export class BtnSettingsComponent implements OnInit {
   btnColor: string = 'purple';
   volume: number = 80;
   loop: boolean;
-  inGroup: boolean;
+  inGroup: boolean = true;
   trimStart: number = 0;
   trimEnd: number = 0;
   isActive: boolean;
@@ -137,7 +137,7 @@ export class BtnSettingsComponent implements OnInit {
       //If there is no data, do the following
     } else {
       this.useTrackTitle = true;
-      this.inGroup = false;
+      this.inGroup = true;
       this.loop = false;
       this.isActive = false;
       this.btnID = '';

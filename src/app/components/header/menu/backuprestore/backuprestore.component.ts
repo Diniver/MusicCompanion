@@ -49,7 +49,6 @@ export class BackuprestoreComponent implements OnInit {
     this.filename = 'DMMC_' + name + '.json';
   }
   restore(event: any) {
-    //
     let reader = new FileReader();
     reader.readAsText(event.target.files[0]);
     reader.onloadend = () => {

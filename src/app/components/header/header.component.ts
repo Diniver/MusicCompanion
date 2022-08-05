@@ -9,12 +9,12 @@ import { BackuprestoreComponent } from './menu/backuprestore/backuprestore.compo
 })
 export class HeaderComponent implements OnInit {
   title = 'DMMC';
-  opened = true;
+  opened = false;
 
   constructor(private matDialog: MatDialog) {}
   open() {
     this.matDialog.open(BackuprestoreComponent);
-    this.opened = true;
+    this.opened = false;
   }
 
   ngOnInit(): void {}
