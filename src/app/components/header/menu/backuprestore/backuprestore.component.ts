@@ -21,12 +21,20 @@ export class BackuprestoreComponent implements OnInit {
   ) {}
 
   backup() {
-    //
+    //Preparing array
+    //JSON Way
     let jsonData = JSON.stringify(this.btns);
+    jsonData = jsonData.replace(
+      /{"changingThisBreaksApplicationSecurity":/g,
+      ''
+    );
+    jsonData = jsonData.replace(/},"volume"/g, ',"volume"');
+    debugger;
     let uri = this.sanitizer.bypassSecurityTrustUrl(
       'data:text/json;charset=UTF-8,' + encodeURIComponent(jsonData)
     );
     this.download = uri;
+    //Naming
     let today = new Date();
     let name =
       today.getFullYear() +
@@ -47,12 +55,13 @@ export class BackuprestoreComponent implements OnInit {
     reader.onloadend = () => {
       let file = reader.result as string;
       let newBtns = JSON.parse(file);
-      // Something happens on pushing the array
-      // this.btnService.restore(newBtns);
+      for (let i = 0; i < newBtns.length; i++) {
+        newBtns[i].audioData = this.sanitizer.bypassSecurityTrustUrl(
+          newBtns[i].audioData
+        );
+      }
+      this.btnService.restore(newBtns);
     };
-    // this.btns = json
-    // let parsedJSON = JSON.parse(json);
-    // console.log(parsedJSON);
   }
 
   ngOnInit(): void {}

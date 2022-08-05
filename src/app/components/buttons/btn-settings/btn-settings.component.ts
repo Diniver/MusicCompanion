@@ -29,8 +29,7 @@ export class BtnSettingsComponent implements OnInit {
   constructor(
     private domSanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: iButton,
-    private service: ButtonService,
-    private audioS: AudioService
+    private service: ButtonService
   ) {}
 
   // Select Audio file
