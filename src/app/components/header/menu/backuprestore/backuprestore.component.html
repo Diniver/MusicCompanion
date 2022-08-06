@@ -12,24 +12,28 @@
   </p>
 </div>
 <div class="buttons">
-  <a
-    mat-raised-button
-    color="primary"
-    mat-dialog-close
-    (click)="backup()"
-    [href]="download"
-    [download]="filename"
-    >Backup</a
-  >
+  <div *ngIf="!check">
+    <a
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      (click)="backup()"
+      [href]="download"
+      [download]="filename"
+      >Backup</a
+    >
+  </div>
 
-  <a mat-raised-button color="primary" (click)="restoreFile.click()">
-    Restore
-    <input
-      #restoreFile
-      type="file"
-      class="hidden"
-      (change)="restore($event)"
-      accept=".json"
-    />
-  </a>
+  <div>
+    <a mat-raised-button color="primary" (click)="restoreFile.click()">
+      Restore
+      <input
+        #restoreFile
+        type="file"
+        class="hidden"
+        (change)="restore($event)"
+        accept=".json"
+      />
+    </a>
+  </div>
 </div>

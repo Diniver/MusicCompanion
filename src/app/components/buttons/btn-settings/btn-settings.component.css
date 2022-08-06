@@ -1,5 +1,7 @@
 h3 {
   text-align: left;
+  letter-spacing: 0.2rem;
+  font-size: 1.3em;
 }
 .head {
   display: flex;
@@ -58,10 +60,6 @@ button {
 .toggle-margin {
   margin-top: 13px;
   margin-bottom: 13px;
-}
-h3 {
-  letter-spacing: 0.2rem;
-  font-size: 1.3em;
 }
 
 .mat-slider-thumb {
