@@ -14,7 +14,7 @@ export class AudioService {
       //Trimming the start
       player.currentTime = btn.trimStart;
       player.play();
-      // this.fadeIn(btn); // It kinda works
+      this.fadeIn(btn); // It kinda works
       // on end resets style and sets active state to false
       player.ontimeupdate = function () {
         //Trimming the end
@@ -48,34 +48,36 @@ export class AudioService {
   fadeIn(btn: iButton) {
     //Add fade volume calculation
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    let fadeDuration: number = 2; //seconds
+    let fadeDuration: number = 2000; //ms
+    let interval: number = fadeDuration / btn.volume;
     player.volume = 0;
     const fadeAudio = setInterval(
       () => {
-        player.volume = player.volume + 0.1;
-        console.log(player.volume);
+        player.volume = player.volume + 0.01;
 
-        if (player.volume >= btn.volume / 100) {
+        if (player.volume >= btn.volume / 100 - 0.1) {
+          player.volume = btn.volume / 100;
           clearInterval(fadeAudio);
+          
         }
       },
-      50 //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
+      interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
   }
   fadeOut(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    let fadeDuration: number = 2; //seconds
+    let fadeDuration: number = 2000; //ms
+    let interval: number = fadeDuration / btn.volume;
     const fadeAudio = setInterval(
       () => {
-        // debugger;
-        player.volume = player.volume - 0.1;
+        player.volume = player.volume - 0.01;
         console.log(player.volume);
         if (player.volume <= 0) {
-          clearInterval(fadeAudio);
           player.volume = 0;
+          clearInterval(fadeAudio);
         }
       },
-      50 //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
+      interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
   }
   volumeMainControl(btn: iButton, totalVol: number) {
