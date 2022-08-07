@@ -42,13 +42,6 @@ button:hover {
   font-family: Orbitron;
 }
 
-.mat-toolbar-single-row {
-  font-family: Orbitron;
-  font-size: 2.3rem;
-  letter-spacing: 0.1em;
-  background-color: rgba(26, 82, 21, 0.199);
-}
-
 .mat-raised-button.mat-primary {
   background-color: #454872;
 }

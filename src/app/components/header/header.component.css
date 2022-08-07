@@ -2,7 +2,22 @@
   position: initial;
   z-index: auto;
 }
-
+.mat-toolbar-single-row {
+  font-family: Orbitron;
+  font-size: 2.3rem;
+  letter-spacing: 0.1em;
+  background-color: rgba(26, 82, 21, 0.199);
+  justify-content: space-between;
+}
+p {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: normal;
+}
+.fade {
+  display: flex;
+  flex-direction: column;
+}
 .sidenav {
   width: 150px;
   background-color: #aaa;
@@ -23,10 +38,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.mat-toolbar-single-row {
-  justify-content: space-between;
 }
 
 .mat-menu-item {

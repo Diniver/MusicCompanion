@@ -50,9 +50,11 @@ export class AudioService {
     let fadeDuration: number = 2000; //ms
     let interval: number = fadeDuration / btn.volume;
     player.volume = 0;
+    console.log(btn.btnID);
     const fadeAudio = setInterval(
       () => {
         console.log(player.volume);
+
         if (player.volume >= btn.volume / 100 - 0.01) {
           player.volume = btn.volume / 100;
           clearInterval(fadeAudio);
