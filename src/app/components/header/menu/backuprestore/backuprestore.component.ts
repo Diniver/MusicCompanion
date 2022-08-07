@@ -23,7 +23,6 @@ export class BackuprestoreComponent implements OnInit {
 
   backup() {
     //Preparing array
-    debugger;
     if (this.btns.length === 0) {
       alert('There are no buttons');
       return;
