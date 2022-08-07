@@ -10,6 +10,7 @@ import { BackuprestoreComponent } from './menu/backuprestore/backuprestore.compo
 export class HeaderComponent implements OnInit {
   title = 'DMMC';
   opened = false;
+  fadeDuration:number = 1700 //ms
 
   constructor(private matDialog: MatDialog) {}
   open() {

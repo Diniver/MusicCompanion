@@ -14,7 +14,7 @@ export class AudioService {
       //Trimming the start
       player.currentTime = btn.trimStart;
       player.play();
-      this.fadeIn(btn); // It kinda works
+      this.fadeIn(btn); // It kinda works. It brakes if you dont wait the method to finish
       player.ontimeupdate = function () {
         //Trimming the end
         if (player.currentTime >= player.duration - btn.trimEnd) {
@@ -34,9 +34,8 @@ export class AudioService {
         btn.color = btn.color.replace('-active', '');
       };
     } else {
-      // this.fadeOut(btn); // It does not work
-      player.pause();
-      player.currentTime = btn.trimStart;
+      this.fadeOut(btn); // It kinda works. It brakes if you dont wait the method to finish
+      //Player pause is in Fade out. It waits to fade and after that stops player
     }
   }
   update(btn: iButton) {
@@ -53,7 +52,8 @@ export class AudioService {
     player.volume = 0;
     const fadeAudio = setInterval(
       () => {
-        if (player.volume >= btn.volume / 100 - 0.1) {
+        console.log(player.volume);
+        if (player.volume >= btn.volume / 100 - 0.01) {
           player.volume = btn.volume / 100;
           clearInterval(fadeAudio);
         } else {
@@ -65,16 +65,18 @@ export class AudioService {
   }
   fadeOut(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    let state: boolean = true;
     let fadeDuration: number = 2000; //ms
     let interval: number = fadeDuration / btn.volume;
     const fadeAudio = setInterval(
       () => {
-        player.volume = player.volume - 0.01;
         console.log(player.volume);
-        if (player.volume <= 0) {
+        if (player.volume <= 0 + 0.01) {
           player.volume = 0;
+          player.pause();
+          player.currentTime = btn.trimStart;
           clearInterval(fadeAudio);
+        } else {
+          player.volume = player.volume - 0.01;
         }
       },
       interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Buttons } from 'src/app/components/buttons/buttonsArray';
 import { iButton } from 'src/app/components/buttons/iButton';
@@ -18,7 +19,8 @@ export class BackuprestoreComponent implements OnInit {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private btnService: ButtonService
+    private btnService: ButtonService,
+    public dialog: MatDialogRef<BackuprestoreComponent>
   ) {}
 
   backup() {
@@ -65,6 +67,7 @@ export class BackuprestoreComponent implements OnInit {
       }
       this.btnService.restore(newBtns);
     };
+    this.dialog.close();
   }
 
   ngOnInit(): void {
