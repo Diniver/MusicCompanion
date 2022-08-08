@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { iButton } from '../components/buttons/iButton';
-import { iFade } from './iFade';
 
 @Injectable({
   providedIn: 'root',
@@ -44,42 +43,32 @@ export class AudioService {
     player.volume = btn.volume / 100;
     player.loop = btn.loop;
   }
-  arrayIn: iFade[] = [];
+
   fadeDuration: number; //ms
+  volM: number = 1;
   fadeIn(btn: iButton) {
-    //Add fade volume calculation
-    let id = btn.btnID;
-    let btnVol = btn.volume;
-    let interval: number = this.fadeDuration / btn.volume;
+    let interval: number = this.fadeDuration / btn.volume / this.volM;
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = 0;
-    this.arrayIn.push({ id, player, btnVol, interval });
-    // console.log(this.arrayIn[0].id);
     const fadeAudioIn = setInterval(
       () => {
-        // console.log(this.arrayIn[0].id + '' + this.arrayIn[0].player.volume);
-
-        if (
-          this.arrayIn[0].player.volume >=
-          this.arrayIn[0].btnVol / 100 - 0.01
-        ) {
-          this.arrayIn[0].player.volume = this.arrayIn[0].btnVol / 100;
-          this.arrayIn.splice(0, 1);
+        console.log(btn.btnTitle + ' - ' + player.volume.toFixed(2));
+        if (player.volume >= (btn.volume / 100 - 0.01) * this.volM) {
+          player.volume = (btn.volume / 100) * this.volM;
           clearInterval(fadeAudioIn);
         } else {
-          this.arrayIn[0].player.volume = this.arrayIn[0].player.volume + 0.01;
+          player.volume = player.volume + 0.01;
         }
       },
-      this.arrayIn[0].interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
+      interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
   }
   fadeOut(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    let interval: number = this.fadeDuration / btn.volume;
-
+    let interval: number = this.fadeDuration / btn.volume / this.volM;
     const fadeAudioOut = setInterval(
       () => {
-        // console.log(btn.btnID + '' + player.volume);
+        console.log(btn.btnTitle + ' - ' + player.volume.toFixed(2));
         if (player.volume <= 0 + 0.01) {
           player.volume = 0;
           player.pause();
@@ -92,8 +81,9 @@ export class AudioService {
       interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
   }
-  volumeMainControl(btn: iButton, totalVol: number) {
+  volumeMainControl(btn: iButton, totalVol: number, volM: number) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
+    this.volM = volM;
     player.volume = totalVol;
   }
 }

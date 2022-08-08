@@ -3,6 +3,7 @@ import { iButton } from '../components/buttons/iButton';
 import { Buttons } from '../components/buttons/buttonsArray';
 import { Observable, of } from 'rxjs';
 import { AudioService } from './audio.service';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -96,7 +97,6 @@ export class ButtonService {
       this.audioService.playStop(this.btns[i]);
       this.styleChange(this.btns[i]);
       // create fade
-      // this.audioService.fade()????
     });
   }
   volumeMainControl(volM: number) {
@@ -109,7 +109,7 @@ export class ButtonService {
     arrVol.forEach((i) => {
       btnVol = this.btns[i].volume / 100;
       let totalVol = btnVol * volM;
-      this.audioService.volumeMainControl(this.btns[i], totalVol);
+      this.audioService.volumeMainControl(this.btns[i], totalVol, volM);
     });
   }
 }

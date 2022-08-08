@@ -1,6 +1,4 @@
-import {
-  Component,
-  OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BackuprestoreComponent } from './menu/backuprestore/backuprestore.component';
 import { AudioService } from 'src/app/services/audio.service';
@@ -12,16 +10,15 @@ import { AudioService } from 'src/app/services/audio.service';
 })
 export class HeaderComponent implements OnInit {
   title = 'DMMC';
-  opened = false;
+  opened = false; // can be removed for production
   fadeDuration: number = 2000; //ms
 
   constructor(private matDialog: MatDialog, private audio: AudioService) {
-    this.audio.fadeDuration = this.fadeDuration
-
+    this.audio.fadeDuration = this.fadeDuration;
   }
   open() {
     this.matDialog.open(BackuprestoreComponent);
-    this.opened = false;
+    this.opened = false; // can be removed for production
   }
   push() {
     this.audio.fadeDuration = this.fadeDuration;
