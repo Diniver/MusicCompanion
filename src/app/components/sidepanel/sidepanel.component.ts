@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonService } from 'src/app/services/button.service';
-
+import { AudioService } from 'src/app/services/audio.service';
 @Component({
   selector: 'app-sidepanel',
   templateUrl: './sidepanel.component.html',
@@ -8,7 +8,12 @@ import { ButtonService } from 'src/app/services/button.service';
 })
 export class SidepanelComponent implements OnInit {
   value: number = 100;
-  constructor(private buttonService: ButtonService) {}
+  constructor(
+    private buttonService: ButtonService,
+    private audioService: AudioService
+  ) {
+    this.audioService.volM = this.value / 100;
+  }
 
   stopAll() {
     this.buttonService.stopAll();
@@ -16,6 +21,7 @@ export class SidepanelComponent implements OnInit {
 
   setVolume() {
     this.buttonService.volumeMainControl(this.value / 100);
+    this.audioService.volM = this.value / 100;
   }
   volD() {
     this.value = this.value - 5;

@@ -45,8 +45,10 @@ export class AudioService {
   }
 
   fadeDuration: number; //ms
-  volM: number = 1;
+  volM: number;
   fadeIn(btn: iButton) {
+    console.log(this.volM);
+
     let interval: number = this.fadeDuration / btn.volume / this.volM;
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = 0;
