@@ -12,11 +12,12 @@ import { AudioService } from 'src/app/services/audio.service';
 })
 export class HeaderComponent implements OnInit {
   title = 'DMMC';
-  opened = true;
+  opened = false;
   fadeDuration: number = 2000; //ms
 
   constructor(private matDialog: MatDialog, private audio: AudioService) {
     this.audio.fadeDuration = this.fadeDuration
+
   }
   open() {
     this.matDialog.open(BackuprestoreComponent);
