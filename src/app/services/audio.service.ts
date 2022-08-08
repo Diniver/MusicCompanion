@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { iButton } from '../components/buttons/iButton';
 import { iFade } from './iFade';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -44,22 +45,24 @@ export class AudioService {
     player.loop = btn.loop;
   }
   arrayIn: iFade[] = [];
+  fadeDuration: number; //ms
   fadeIn(btn: iButton) {
     //Add fade volume calculation
-    let fadeDuration: number = 2000; //ms / Replace with GUI value
     let id = btn.btnID;
     let btnVol = btn.volume;
-    let interval: number = fadeDuration / btn.volume;
+    let interval: number = this.fadeDuration / btn.volume;
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = 0;
     this.arrayIn.push({ id, player, btnVol, interval });
-    console.log(this.arrayIn);
     // console.log(this.arrayIn[0].id);
-     const fadeAudioIn = setInterval(
+    const fadeAudioIn = setInterval(
       () => {
         // console.log(this.arrayIn[0].id + '' + this.arrayIn[0].player.volume);
-        
-        if (this.arrayIn[0].player.volume >= this.arrayIn[0].btnVol / 100 - 0.01) {
+
+        if (
+          this.arrayIn[0].player.volume >=
+          this.arrayIn[0].btnVol / 100 - 0.01
+        ) {
           this.arrayIn[0].player.volume = this.arrayIn[0].btnVol / 100;
           this.arrayIn.splice(0, 1);
           clearInterval(fadeAudioIn);
@@ -69,13 +72,11 @@ export class AudioService {
       },
       this.arrayIn[0].interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
-    
-
   }
   fadeOut(btn: iButton) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    let fadeDuration: number = 2000; //ms / Replace with GUI value
-    let interval: number = fadeDuration / btn.volume;
+    let interval: number = this.fadeDuration / btn.volume;
+
     const fadeAudioOut = setInterval(
       () => {
         // console.log(btn.btnID + '' + player.volume);

@@ -14,10 +14,6 @@ p {
   font-size: 14px;
   letter-spacing: normal;
 }
-.fade {
-  display: flex;
-  flex-direction: column;
-}
 .sidenav {
   width: 150px;
   background-color: #aaa;
@@ -44,4 +40,22 @@ p {
   width: 100%;
   text-align: start;
   height: 3em;
+}
+
+.fadeHint {
+  font-size: 0.8rem;
+}
+
+::ng-deep .mat-form-field {
+  font-size: 1rem;
+  width: 80%;
+  margin-left: 1em;
+}
+
+::ng-deep .mat-toolbar .mat-input-element {
+  padding-top: 1rem;
+}
+
+.cros {
+  margin-top: 4rem;
 }

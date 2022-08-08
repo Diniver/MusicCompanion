@@ -3,7 +3,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { iButton } from '../iButton';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ButtonService } from 'src/app/services/button.service';
-import { AudioService } from 'src/app/services/audio.service';
 
 @Component({
   selector: 'app-btn-settings',
