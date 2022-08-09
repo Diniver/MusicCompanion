@@ -1,0 +1,24 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  border: none;
+  margin-top: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.mat-stroked-button {
+  border: none;
+}
+
+.kurcin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.about {
+  width: 80vw;
+}

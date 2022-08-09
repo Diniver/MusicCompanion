@@ -29,17 +29,18 @@ button:hover {
 
 .mat-typography h1 {
   font-family: Orbitron;
-  letter-spacing: 0.1em;
-  font-size: 3rem;
+  letter-spacing: 0.2em;
+  font-size: 2em;
 }
 
 .mat-typography h2 {
   font-family: Orbitron;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.2em;
   font-size: 1.6em;
 }
 .mat-typography h3 {
   font-family: Orbitron;
+  letter-spacing: 0.04em;
 }
 
 .mat-raised-button.mat-primary {

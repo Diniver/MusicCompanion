@@ -1,10 +1,21 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  border: none;
+  margin-top: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 .sidenav-container {
   position: initial;
   z-index: auto;
 }
 .mat-toolbar-single-row {
   font-family: Orbitron;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.1em;
   background-color: rgba(26, 82, 21, 0.199);
   justify-content: space-between;

@@ -22,14 +22,14 @@
         <!-- <button mat-menu-item>Tutorial</button> -->
         <!-- <button mat-menu-item>Presets</button>
         <button mat-menu-item>Manage Buttons</button> -->
-        <button mat-menu-item (click)="open()">Backup and Restore</button>
-        <!-- <button mat-menu-item>Support us</button>
-        <button mat-menu-item>About</button> -->
+        <button mat-menu-item (click)="backup()">Backup and Restore</button>
+        <!-- <button mat-menu-item>Support us</button> -->
+        <button mat-menu-item (click)="about()">About</button>
       </div>
       <div>
         <mat-form-field appearance="standard" class="cros">
           <mat-label><h3>Fading</h3></mat-label>
-          <input matInput [(ngModel)]="fadeDuration" (change)="push()" />
+          <input matInput [(ngModel)]="fadeDuration" (change)="fade()" />
           <mat-hint class="fadeHint">milliseconds</mat-hint>
         </mat-form-field>
       </div>

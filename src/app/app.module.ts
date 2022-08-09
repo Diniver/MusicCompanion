@@ -31,6 +31,7 @@ import { BtnComponent } from './components/buttons/btn/btn.component';
 import { ButtonService } from './services/button.service';
 import { AudioService } from './services/audio.service';
 import { BackuprestoreComponent } from './components/header/menu/backuprestore/backuprestore.component';
+import { AboutComponent } from './components/header/menu/about/about.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BackuprestoreComponent } from './components/header/menu/backuprestore/b
     SidepanelComponent,
     BtnComponent,
     BackuprestoreComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

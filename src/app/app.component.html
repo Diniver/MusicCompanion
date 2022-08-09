@@ -5,7 +5,10 @@
 <app-header></app-header>
 <app-sidepanel></app-sidepanel>
 <app-btn-grid></app-btn-grid>
-<div class="version"><p>0.10</p></div>
+<app-about hidden (ver)="version = $event"></app-about>
+<div class="version">
+  <p (click)="openVer()">{{ version }}</p>
+</div>
 
 <!-- Pages Placeholder -->
 <!-- <app-pages></app-pages> -->
