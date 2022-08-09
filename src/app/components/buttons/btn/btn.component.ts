@@ -19,9 +19,7 @@ export class BtnComponent implements OnInit, DoCheck {
     private matDialog: MatDialog,
     private buttonService: ButtonService,
     private audio: AudioService
-  ) {
-    this.buttonService.delay = this.audio.fadeDuration;
-  }
+  ) {}
 
   init() {
     this.button.isActive = !this.button.isActive;

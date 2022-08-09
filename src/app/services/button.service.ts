@@ -52,9 +52,10 @@ export class ButtonService {
       this.audioService.update(data);
     }
   }
-  delay: number; // set in btn.components.ts
+  delay: number;
 
   disableButton(btn: iButton) {
+    this.delay = this.audioService.fadeDuration;
     let arrayGroup = [];
     for (let i = 0; i < this.btns.length; i++) {
       if (
