@@ -52,20 +52,44 @@ export class ButtonService {
       this.audioService.update(data);
     }
   }
-  inGroup(state: iButton) {
+  delay: number; // set in btn.components.ts
+
+  disableButton(btn: iButton) {
+    let arrayGroup = [];
+    for (let i = 0; i < this.btns.length; i++) {
+      if (
+        this.btns[i].color == btn.color ||
+        (this.btns[i].color == btn.color + '-active' &&
+          this.btns[i].inGroup == btn.inGroup)
+      ) {
+        if (this.btns[i].inGroup && btn.inGroup) {
+          arrayGroup.push(i);
+        }
+      }
+    }
+
+    arrayGroup.forEach((x) => {
+      this.btns[x].btnDisabled = true;
+      const wait = setTimeout(() => {
+        this.btns[x].btnDisabled = false;
+      }, this.delay);
+    });
+  }
+
+  inGroup(btn: iButton) {
     const arrayColor = [];
     //Getting IDs with Color equal to source and making array
     for (let i = 0; i < this.btns.length; i++) {
       if (
-        this.btns[i].color === state.color &&
-        this.btns[i].inGroup === state.inGroup
+        this.btns[i].color === btn.color &&
+        this.btns[i].inGroup === btn.inGroup
       ) {
         //removing the current btnID from the array
-        if (this.btns[i].btnID != state.btnID) arrayColor.push(i);
+        if (this.btns[i].btnID != btn.btnID) arrayColor.push(i);
       }
     }
     arrayColor.forEach((x) => {
-      if (state.inGroup === true && this.btns[x].isActive === true) {
+      if (btn.inGroup === true && this.btns[x].isActive === true) {
         this.btns[x].isActive = false;
         this.styleChange(this.btns[x]);
         this.audioService.playStop(this.btns[x]);
@@ -96,7 +120,11 @@ export class ButtonService {
       this.btns[i].isActive = false;
       this.audioService.playStop(this.btns[i]);
       this.styleChange(this.btns[i]);
-      // create fade
+      //block from click
+      this.btns[i].btnDisabled = true;
+      const wait = setTimeout(() => {
+        this.btns[i].btnDisabled = false;
+      }, this.delay);
     });
   }
   volumeMainControl(volM: number) {

@@ -52,13 +52,14 @@ export class AudioService {
     player.volume = 0;
     const fadeAudioIn = setInterval(
       () => {
-        console.log(
-          btn.btnTitle +
-            ' - ' +
-            player.volume.toFixed(2) +
-            ', interval - ' +
-            interval
-        );
+        // console.log(
+        //   'Fade in ,' +
+        //     btn.btnTitle +
+        //     ' - ' +
+        //     player.volume.toFixed(2) +
+        //     ', interval - ' +
+        //     interval
+        // );
         if (player.volume >= (btn.volume / 100 - 0.01) * this.volM) {
           player.volume = (btn.volume / 100) * this.volM;
           clearInterval(fadeAudioIn);
@@ -74,13 +75,14 @@ export class AudioService {
     let interval: number = this.fadeDuration / btn.volume / this.volM;
     const fadeAudioOut = setInterval(
       () => {
-        console.log(
-          btn.btnTitle +
-            ' - ' +
-            player.volume.toFixed(2) +
-            ', interval - ' +
-            interval
-        );
+        // console.log(
+        //   'Fade out ' +
+        //     btn.btnTitle +
+        //     ' - ' +
+        //     player.volume.toFixed(2) +
+        //     ', interval - ' +
+        //     interval
+        // );
         if (player.volume <= 0 + 0.01) {
           player.volume = 0;
           player.pause();

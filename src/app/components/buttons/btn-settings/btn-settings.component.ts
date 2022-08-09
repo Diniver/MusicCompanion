@@ -24,6 +24,7 @@ export class BtnSettingsComponent implements OnInit {
   trimStart: number = 0;
   trimEnd: number = 0;
   isActive: boolean;
+  isDisabled: boolean;
 
   constructor(
     private domSanitizer: DomSanitizer,
@@ -140,6 +141,7 @@ export class BtnSettingsComponent implements OnInit {
       this.loop = false;
       this.isActive = false;
       this.btnID = '';
+      this.isDisabled = false;
     }
   }
 }

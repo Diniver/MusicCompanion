@@ -11,4 +11,5 @@ export interface iButton {
   trimStart: number;
   trimEnd: number;
   isActive: boolean;
+  btnDisabled: boolean;
 }

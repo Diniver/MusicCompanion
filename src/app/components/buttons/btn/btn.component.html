@@ -3,6 +3,7 @@
   [ngClass]="class"
   (click)="init()"
   (contextmenu)="openSettings($event)"
+  [disabled]="btnDisabled"
 >
   <audio
     style="display: none"
