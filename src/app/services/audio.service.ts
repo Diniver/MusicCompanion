@@ -44,17 +44,21 @@ export class AudioService {
     player.loop = btn.loop;
   }
 
-  fadeDuration: number; //ms
-  volM: number;
+  fadeDuration: number; //in ms. Value comes from header.components.ts
+  volM: number; // value comes from sidepanel.components.ts
   fadeIn(btn: iButton) {
-    console.log(this.volM);
-
     let interval: number = this.fadeDuration / btn.volume / this.volM;
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
     player.volume = 0;
     const fadeAudioIn = setInterval(
       () => {
-        console.log(btn.btnTitle + ' - ' + player.volume.toFixed(2));
+        console.log(
+          btn.btnTitle +
+            ' - ' +
+            player.volume.toFixed(2) +
+            ', interval - ' +
+            interval
+        );
         if (player.volume >= (btn.volume / 100 - 0.01) * this.volM) {
           player.volume = (btn.volume / 100) * this.volM;
           clearInterval(fadeAudioIn);
@@ -70,7 +74,13 @@ export class AudioService {
     let interval: number = this.fadeDuration / btn.volume / this.volM;
     const fadeAudioOut = setInterval(
       () => {
-        console.log(btn.btnTitle + ' - ' + player.volume.toFixed(2));
+        console.log(
+          btn.btnTitle +
+            ' - ' +
+            player.volume.toFixed(2) +
+            ', interval - ' +
+            interval
+        );
         if (player.volume <= 0 + 0.01) {
           player.volume = 0;
           player.pause();
@@ -83,9 +93,8 @@ export class AudioService {
       interval //The time, in milliseconds (thousandths of a second), the timer should delay in between executions of the specified function or code.
     );
   }
-  volumeMainControl(btn: iButton, totalVol: number, volM: number) {
+  volumeMainControl(btn: iButton, totalVol: number) {
     let player = <HTMLAudioElement>document.getElementById(btn.btnID);
-    this.volM = volM;
     player.volume = totalVol;
   }
 }

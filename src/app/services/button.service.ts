@@ -109,7 +109,7 @@ export class ButtonService {
     arrVol.forEach((i) => {
       btnVol = this.btns[i].volume / 100;
       let totalVol = btnVol * volM;
-      this.audioService.volumeMainControl(this.btns[i], totalVol, volM);
+      this.audioService.volumeMainControl(this.btns[i], totalVol);
     });
   }
 }
