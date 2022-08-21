@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { iButton } from '../iButton';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ButtonService } from 'src/app/services/button.service';
+import { DriveComponent } from './drive/drive.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-btn-settings',
@@ -29,7 +31,8 @@ export class BtnSettingsComponent implements OnInit {
   constructor(
     private domSanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data: iButton,
-    private service: ButtonService
+    private service: ButtonService,
+    private matDialog: MatDialog
   ) {}
 
   // Select Audio file
@@ -65,7 +68,15 @@ export class BtnSettingsComponent implements OnInit {
       alert('Please select audio file');
     }
   }
-
+  gDrive() {
+    //Input for URL from Google Drive
+    const dialog = this.matDialog.open(DriveComponent);
+    dialog.afterClosed().subscribe((url) => {
+      this.audioData = url;
+      this.fileName = 'FIX IT EMOOOO';
+      this.onCustomName();
+    });
+  }
   //Set Title
   onCustomName() {
     if (this.useTrackTitle) {

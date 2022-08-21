@@ -32,6 +32,7 @@ import { ButtonService } from './services/button.service';
 import { AudioService } from './services/audio.service';
 import { BackuprestoreComponent } from './components/header/menu/backuprestore/backuprestore.component';
 import { AboutComponent } from './components/header/menu/about/about.component';
+import { DriveComponent } from './components/buttons/btn-settings/drive/drive.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AboutComponent } from './components/header/menu/about/about.component';
     BtnComponent,
     BackuprestoreComponent,
     AboutComponent,
+    DriveComponent,
   ],
   imports: [
     BrowserModule,

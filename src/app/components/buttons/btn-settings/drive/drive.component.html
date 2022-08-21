@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Drive URL</mat-label>
+    <input matInput [(ngModel)]="urlInput" />
+  </mat-form-field>
+</div>
+<div>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="urlCheck()"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+</div>
