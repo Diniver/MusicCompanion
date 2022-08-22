@@ -73,6 +73,12 @@ export class BtnSettingsComponent implements OnInit {
     const dialog = this.matDialog.open(DriveComponent);
     dialog.afterClosed().subscribe((url) => {
       this.audioData = url;
+      // try this type of asking for html. look for title and set is and filename
+      // new method for getting the url info, get title data, set as fileName, run onCustomName
+      // this.http.get('https://kissht.com/',{responseType:'text'}).subscribe(res=>{
+      //   this.KisshtHtml = this.sanitizer.bypassSecurityTrustHtml(res);
+      // })
+
       this.fileName = 'FIX IT EMOOOO';
       this.onCustomName();
     });
