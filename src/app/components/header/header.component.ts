@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   about() {
-    this.matDialog.open(AboutComponent);
+    this.matDialog.open(AboutComponent, { maxHeight: '90vh' });
     this.opened = false; // Closes menu on click
   }
 

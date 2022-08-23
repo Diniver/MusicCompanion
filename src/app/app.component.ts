@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private matDialog: MatDialog) {}
 
   openVer() {
-    this.matDialog.open(AboutComponent);
+    this.matDialog.open(AboutComponent, { maxHeight: '90vh' });
   }
 }
