@@ -1,8 +1,13 @@
-<div>
+<h3>Google Drive link</h3>
+<p>Please make sure your has <em>Anyone with the link</em> general access</p>
+<div class="field1">
   <mat-form-field appearance="fill">
     <mat-label>Drive URL</mat-label>
     <input matInput [(ngModel)]="urlInput" />
   </mat-form-field>
+  <!-- <button mat-stroked-button color="basic">
+    <mat-icon> content_paste </mat-icon>
+  </button> -->
 </div>
 <div>
   <button
@@ -11,6 +16,6 @@
     (click)="urlCheck()"
     cdkFocusInitial
   >
-    Ok
+    Confirm
   </button>
 </div>

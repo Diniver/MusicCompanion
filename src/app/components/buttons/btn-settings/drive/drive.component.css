@@ -1,0 +1,10 @@
+.mat-stroked-button {
+  border: none;
+}
+button {
+  font-size: 1.3rem;
+}
+.field1 {
+  display: flex;
+  align-items: center;
+}
