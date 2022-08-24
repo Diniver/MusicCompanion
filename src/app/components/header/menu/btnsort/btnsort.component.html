@@ -27,14 +27,25 @@
 </div>
 <div>
   <!-- Colors array to sort -->
-  <div class="listColor" cdkDropList (cdkDropListDropped)="dropColor($event)">
-    <div class="btn" [ngClass]="color" *ngFor="let color of colors" cdkDrag>
+  <p>Sort by color</p>
+  <div
+    class="listColor"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="dropColor($event)"
+  >
+    <div
+      class="btnColor"
+      [ngClass]="color"
+      *ngFor="let color of colors"
+      cdkDrag
+    >
       <div class="placeholder" *cdkDragPlaceholder></div>
-      {{ color }}
     </div>
   </div>
-  <div class="listBnt" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div class="btn" *ngFor="let btn of buttons" cdkDrag>
+  <p>Drag'n Drop</p>
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="btn" [ngClass]="btn.color" *ngFor="let btn of buttons" cdkDrag>
       <div class="placeholder" *cdkDragPlaceholder></div>
       {{ btn.btnTitle }}
     </div>
