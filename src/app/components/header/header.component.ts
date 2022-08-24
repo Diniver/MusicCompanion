@@ -43,6 +43,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.btnSort(); // To be removed
+    this.tutorial(); // To be removed
   }
 }

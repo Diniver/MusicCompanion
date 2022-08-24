@@ -52,7 +52,8 @@ button {
 }
 
 mat-slider {
-  width: 200px;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 ::ng-deep .mat-slider-track-fill {
