@@ -4,3 +4,30 @@
     <mat-icon>close</mat-icon>
   </button>
 </div>
+<div style="margin-bottom: 1em">
+  <!-- Buttons for fast sort -->
+  <button
+    mat-icon-button
+    color="basic"
+    matTooltip="Sort by Name"
+    matTooltipPosition="above"
+    (click)="name()"
+  >
+    <mat-icon>sort_by_alpha</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    color="basic"
+    matTooltip="Sort by Color"
+    matTooltipPosition="above"
+    (click)="color()"
+  >
+    <mat-icon>color_lens</mat-icon>
+  </button>
+</div>
+<div class="list" cdkDropList (cdkDropListDropped)="drop($event)">
+  <div class="btn" *ngFor="let btn of buttons" cdkDrag>
+    <div class="placeholder" *cdkDragPlaceholder></div>
+    {{ btn.btnTitle }}
+  </div>
+</div>

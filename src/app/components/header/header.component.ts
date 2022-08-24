@@ -42,5 +42,7 @@ export class HeaderComponent implements OnInit {
     this.audio.fadeDuration = this.fadeDuration;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.btnSort(); // To be removed
+  }
 }

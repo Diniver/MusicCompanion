@@ -67,11 +67,6 @@ mat-slider {
   background-color: #454872 !important;
 }
 
-::ng-deep .mat-tooltip {
-  font-size: 14px;
-  text-align: center;
-}
-
 .trim-head {
   margin-bottom: -15px;
 }

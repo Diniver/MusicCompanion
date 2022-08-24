@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 // Angular Materials
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -72,6 +74,7 @@ import { BtnsortComponent } from './components/header/menu/btnsort/btnsort.compo
     MatSidenavModule,
     MatListModule,
     MatTooltipModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

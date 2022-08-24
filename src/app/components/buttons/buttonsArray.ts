@@ -1,5 +1,51 @@
 import { iButton } from './iButton';
-export const Buttons: iButton[] = [];
+export const Buttons: iButton[] = [
+  {
+    btnID: '78658764187',
+    btnTitle: '1',
+    fileName: 'Filename1',
+    useTrackTitle: true,
+    audioData: 'fhasdlofiuawo4;8fyuawp;9o8fyua;oweifgha;oes98fy',
+    volume: 70,
+    color: 'green',
+    inGroup: false,
+    loop: false,
+    trimStart: 200,
+    trimEnd: 4,
+    isActive: false,
+    btnDisabled: false,
+  },
+  {
+    btnID: '6546328756',
+    btnTitle: '2',
+    fileName: 'Filename2',
+    useTrackTitle: false,
+    audioData: '',
+    volume: 20,
+    color: 'poo',
+    inGroup: true,
+    loop: true,
+    trimStart: 2,
+    trimEnd: 10,
+    isActive: false,
+    btnDisabled: false,
+  },
+  {
+    btnID: '3696375746',
+    btnTitle: '3',
+    fileName: 'Filename3',
+    useTrackTitle: false,
+    audioData: '',
+    volume: 10,
+    color: 'poo',
+    inGroup: true,
+    loop: true,
+    trimStart: 2,
+    trimEnd: 10,
+    isActive: false,
+    btnDisabled: false,
+  },
+];
 
 // ===============EXAMPLE_DATA==============
 // {
@@ -15,6 +61,8 @@ export const Buttons: iButton[] = [];
 //   trimStart: 200,
 //   trimEnd: 4,
 //   isActive: false,
+// btnDisabled: false
+
 // },
 // {
 //   btnID: '6546328756',
@@ -29,6 +77,8 @@ export const Buttons: iButton[] = [];
 //   trimStart: 2,
 //   trimEnd: 10,
 //   isActive: false,
+// btnDisabled: false
+
 // },
 // {
 //   btnID: '3696375746',
@@ -43,4 +93,6 @@ export const Buttons: iButton[] = [];
 //   trimStart: 2,
 //   trimEnd: 10,
 //   isActive: false,
+// btnDisabled: false
+
 // },
