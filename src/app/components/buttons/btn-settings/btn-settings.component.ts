@@ -19,7 +19,7 @@ export class BtnSettingsComponent implements OnInit {
   fileName: string = '';
   useTrackTitle: boolean;
   customName: string = '';
-  btnColor: string = 'purple';
+  btnColor: string = 'green';
   volume: number = 80;
   loop: boolean;
   inGroup: boolean = true;
