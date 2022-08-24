@@ -33,6 +33,8 @@ import { AudioService } from './services/audio.service';
 import { BackuprestoreComponent } from './components/header/menu/backuprestore/backuprestore.component';
 import { AboutComponent } from './components/header/menu/about/about.component';
 import { DriveComponent } from './components/buttons/btn-settings/drive/drive.component';
+import { TutorialComponent } from './components/header/menu/tutorial/tutorial.component';
+import { BtnsortComponent } from './components/header/menu/btnsort/btnsort.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { DriveComponent } from './components/buttons/btn-settings/drive/drive.co
     BackuprestoreComponent,
     AboutComponent,
     DriveComponent,
+    TutorialComponent,
+    BtnsortComponent,
   ],
   imports: [
     BrowserModule,

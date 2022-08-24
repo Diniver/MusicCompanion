@@ -19,9 +19,8 @@
         <h3>Menu</h3>
       </div>
       <div class="sidenav-menu-options">
-        <!-- <button mat-menu-item>Tutorial</button> -->
-        <!-- <button mat-menu-item>Presets</button>
-        <button mat-menu-item>Manage Buttons</button> -->
+        <button mat-menu-item (click)="tutorial()">Tutorial</button>
+        <button mat-menu-item (click)="btnSort()">Sort Buttons</button>
         <button mat-menu-item (click)="backup()">Backup and Restore</button>
         <!-- <button mat-menu-item>Support us</button> -->
         <button mat-menu-item (click)="about()">About</button>
