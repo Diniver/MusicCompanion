@@ -35,7 +35,7 @@ import { AudioService } from './services/audio.service';
 import { BackuprestoreComponent } from './components/header/menu/backuprestore/backuprestore.component';
 import { AboutComponent } from './components/header/menu/about/about.component';
 import { DriveComponent } from './components/buttons/btn-settings/drive/drive.component';
-import { TutorialComponent } from './components/header/menu/tutorial/tutorial.component';
+import { FAQComponent } from './components/header/menu/FAQ/FAQ.component';
 import { BtnsortComponent } from './components/header/menu/btnsort/btnsort.component';
 
 @NgModule({
@@ -50,7 +50,7 @@ import { BtnsortComponent } from './components/header/menu/btnsort/btnsort.compo
     BackuprestoreComponent,
     AboutComponent,
     DriveComponent,
-    TutorialComponent,
+    FAQComponent,
     BtnsortComponent,
   ],
   imports: [

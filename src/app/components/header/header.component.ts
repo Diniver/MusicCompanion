@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BackuprestoreComponent } from './menu/backuprestore/backuprestore.component';
 import { AudioService } from 'src/app/services/audio.service';
 import { AboutComponent } from './menu/about/about.component';
-import { TutorialComponent } from './menu/tutorial/tutorial.component';
+import { FAQComponent } from './menu/FAQ/FAQ.component';
 import { BtnsortComponent } from './menu/btnsort/btnsort.component';
 
 @Component({
@@ -20,8 +20,8 @@ export class HeaderComponent implements OnInit {
     this.audio.fadeDuration = this.fadeDuration;
   }
 
-  tutorial() {
-    this.matDialog.open(TutorialComponent, { maxHeight: '90vh' });
+  faq() {
+    this.matDialog.open(FAQComponent, { maxHeight: '90vh' });
     this.opened = false; // Closes menu on click
   }
   btnSort() {
@@ -42,7 +42,5 @@ export class HeaderComponent implements OnInit {
     this.audio.fadeDuration = this.fadeDuration;
   }
 
-  ngOnInit(): void {
-    this.tutorial(); // To be removed
-  }
+  ngOnInit(): void {}
 }
