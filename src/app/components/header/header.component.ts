@@ -13,7 +13,7 @@ import { BtnsortComponent } from './menu/btnsort/btnsort.component';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'DMMC';
-  opened: boolean = true;
+  opened: boolean = false;
   fadeDuration: number = 2000; //ms
 
   constructor(private matDialog: MatDialog, private audio: AudioService) {
