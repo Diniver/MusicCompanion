@@ -22,6 +22,10 @@ export class DriveComponent implements OnInit {
       ) {
         let id = urlArr[5];
         this.urlOutput = 'https://docs.google.com/uc?export=download&id=' + id;
+        // let data = {
+        //   urlOutput: this.urlOutput,
+        //   urlInput: this.urlInput,
+        // };
         this.dialogRef.close(this.urlOutput);
       } else {
         alert('Please enter valid google drive URL');

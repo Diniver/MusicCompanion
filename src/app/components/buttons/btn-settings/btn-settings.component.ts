@@ -5,7 +5,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ButtonService } from 'src/app/services/button.service';
 import { DriveComponent } from './drive/drive.component';
 import { MatDialog } from '@angular/material/dialog';
-
 @Component({
   selector: 'app-btn-settings',
   templateUrl: './btn-settings.component.html',
@@ -71,18 +70,19 @@ export class BtnSettingsComponent implements OnInit {
   gDrive() {
     //Input for URL from Google Drive
     const dialog = this.matDialog.open(DriveComponent);
-    dialog.afterClosed().subscribe((url) => {
-      this.audioData = url;
+    dialog.afterClosed().subscribe((data) => {
+      this.audioData = data;
       // try this type of asking for html. look for title and set is and filename
       // new method for getting the url info, get title data, set as fileName, run onCustomName
 
-      // let link: any = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+      // let link: any = this.domSanitizer.bypassSecurityTrustUrl(data.urlInput);
+      // debugger;
       // this.http.get(link, { responseType: 'text' }).subscribe((res) => {
       //   let nono = this.domSanitizer.bypassSecurityTrustHtml(res);
       //   console.log(nono);
       // });
-      if (url) {
-        this.fileName = url;
+      if (data) {
+        this.fileName = data;
       }
       this.onCustomName();
     });
