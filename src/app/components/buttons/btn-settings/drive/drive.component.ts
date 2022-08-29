@@ -21,7 +21,7 @@ export class DriveComponent implements OnInit {
         urlArr[3] === 'file'
       ) {
         let id = urlArr[5];
-        this.urlOutput = 'https://docs.google.com/uc?export=download&id=' + id;
+        this.urlOutput = 'https://docs.google.com/uc?export=open&id=' + id;
         // let data = {
         //   urlOutput: this.urlOutput,
         //   urlInput: this.urlInput,
