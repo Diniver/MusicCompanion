@@ -55,17 +55,21 @@ export class BackuprestoreComponent implements OnInit {
     }
   }
   restore(event: any) {
+    console.log('start');
+
     let reader = new FileReader();
     reader.readAsText(event.target.files[0]);
-    reader.onloadend = () => {
+    reader.onloadend = async () => {
       let file = reader.result as string;
       let newBtns = JSON.parse(file);
       for (let i = 0; i < newBtns.length; i++) {
+        console.log(i);
         newBtns[i].audioData = this.sanitizer.bypassSecurityTrustUrl(
           newBtns[i].audioData
         );
       }
       this.btnService.restore(newBtns);
+      console.log('end');
     };
     this.dialog.close();
   }
